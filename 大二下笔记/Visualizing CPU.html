@@ -15,29 +15,29 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="进程管理（虚拟化CPU）：常用系统调用API通过让一个进程只运行一个时间片，然后切换到其他进程，操作系统提供了存在多个虚拟CPU 的假象。  低级机制（机制mechanism）和高级智能（策略policy）：  进程（process）：一个进程只是一个正在运行的程序  机器状态（machine state）：程序在运行时可以读取或更新的&#x3D;&#x3D;内容&#x3D;&#x3D;；进程可以">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220303143104398.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220303150926777.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220303222734529.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220303152057404.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220303153121757.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307184246872.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307201642223.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307201650207.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307201630262.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307201613667.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307201554245.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307202653969.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307202703855.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307202946250.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220307204407598.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220310145009312.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220314211806835.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220314212143976.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220303143104398.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220303150926777.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220303222734529.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220303152057404.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220303153121757.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307184246872.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307201642223.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307201650207.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307201630262.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307201613667.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307201554245.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307202653969.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307202703855.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307202946250.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220307204407598.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220310145009312.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220314211806835.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220314212143976.png">
 <meta property="article:published_time" content="2022-04-01T00:48:40.934Z">
 <meta property="article:modified_time" content="2022-04-01T00:48:40.934Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220303143104398.png">
+<meta name="twitter:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220303143104398.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -185,7 +185,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="进程管理（虚拟化CPU）："><a href="#进程管理（虚拟化CPU）：" class="headerlink" title="进程管理（虚拟化CPU）："></a>进程管理（虚拟化CPU）：</h2><h3 id="常用系统调用API"><a href="#常用系统调用API" class="headerlink" title="常用系统调用API"></a>常用系统调用API</h3><p>通过让一个进程只运行一个时间片，然后切换到其他进程，操作系统提供了存在多个虚拟CPU 的假象。</p>
+        <h2 id><a href="#" class="headerlink" title></a></h2><h2 id="进程管理（虚拟化CPU）："><a href="#进程管理（虚拟化CPU）：" class="headerlink" title="进程管理（虚拟化CPU）："></a>进程管理（虚拟化CPU）：</h2><h3 id="常用系统调用API"><a href="#常用系统调用API" class="headerlink" title="常用系统调用API"></a>常用系统调用API</h3><p>通过让一个进程只运行一个时间片，然后切换到其他进程，操作系统提供了存在多个虚拟CPU 的假象。</p>
 <ul>
 <li><p>低级机制（机制mechanism）和高级智能（策略policy）：</p>
 <ul>
@@ -240,7 +240,7 @@ main(int argc, char *argv[])
 <hr>
 <ul>
 <li>进程状态：<ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220303143104398.png" alt="image-20220303143104398" style="zoom: 33%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220303143104398.png" alt="image-20220303143104398" style="zoom: 33%;"></li>
 <li>运行（running）：在运行状态下，进程正在处理器上运行。这意味着它正在执行指令。</li>
 <li>就绪（ready）：在就绪状态下，进程已准备好运行，但由于某种原因，操作系统选择不在此时运行。</li>
 <li>阻塞（blocked）：在阻塞状态下，一个进程执行了某种操作，直到发生其他事件时才会准备运行。<ul>
@@ -263,7 +263,7 @@ main(int argc, char *argv[])
 </li>
 <li>线程：<ul>
 <li>在一般的函数调用中，它是随着此函数所在的调度单元（执行流）一块上处理器运行的，这个调度单元也许是整个进程，也可能是其他的线程，总之是混在更大的执行流中被“&#x3D;&#x3D;夹杂着、稍带着”执行&#x3D;&#x3D;的，甚至有可能还未执行到此函数它的时间片就到了，从而被换下了处理器；</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220303150926777.png" alt="image-20220303150926777"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220303150926777.png" alt="image-20220303150926777"></li>
 <li>将进程A中的一个函数单拎出来执行，从“捎带着”变为“专门”执行；从而让程序中多个执行流以“并行”的方式运行；</li>
 </ul>
 </li>
@@ -275,7 +275,7 @@ main(int argc, char *argv[])
 </ul>
 </li>
 <li>操作系统为每个进程提供了一个PCB，Process Control Block，即程序控制块，它就是进程的身份证，用它来记录与此进程相关的信息，比如进程状态、PID、优先级等。<ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220303222734529.png" alt="image-20220303222734529"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220303222734529.png" alt="image-20220303222734529"></li>
 <li>寄存器映像，即保存进程的“现场”，进程在处理器上运行时，所有寄存器的值都将保存到此处；</li>
 <li>操作系统单独维护一个进程表，将所有的PCB结构加载到此表中，由调度器直接在进程表中找相应进程的 PCB，从而获取到对应进程的信息，将其寄存器映像加载到处理器后，新进程就开始运行了。</li>
 </ul>
@@ -285,7 +285,7 @@ main(int argc, char *argv[])
 <h3 id="机制：受限直接执行："><a href="#机制：受限直接执行：" class="headerlink" title="机制：受限直接执行："></a>机制：受限直接执行：</h3><ul>
 <li><p>直接执行(direct execution)：</p>
 <ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220303152057404.png" alt="image-20220303152057404"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220303152057404.png" alt="image-20220303152057404"></li>
 <li>快，但是无法控制，软件如果不返回，那么系统什么也做不了；</li>
 </ul>
 </li>
@@ -309,7 +309,7 @@ main(int argc, char *argv[])
 <li>程序必须执行特殊的指令时，可以调用陷阱（trap）指令。该指令将跳入内核并将特权级别提升到内核模式，之后系统就可以执行任何需要的特权操作（如果允许）</li>
 </ul>
 </li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220303153121757.png" alt="image-20220303153121757" style="zoom:150%;" />
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220303153121757.png" alt="image-20220303153121757" style="zoom:150%;">
 - step 1：内核启动时设置 trap table。这个表==通过指令==告诉硬件某类异常事件发生时==需要的代码的位置==；
 - step 2：在进程列表创建程序$\rightarrow$分配内存$\rightarrow$加载到内存，根据参数[argv]设置程序的栈$\rightarrow$ 用寄存器和程序计数器填充内核栈 $\rightarrow$从陷阱返回；
   - **栈**（stack）从虚拟地址 `0xC0000000` 往低地址增长。**堆**（heap）正好相反，从低地址往高地址增长。栈用于函数调用以及存放局部变量等，堆用于动态内存分配；
@@ -352,7 +352,7 @@ main(int argc, char *argv[])
 </ul>
 <h3 id="保存上下文-context-："><a href="#保存上下文-context-：" class="headerlink" title="保存上下文(context)："></a>保存上下文(context)：</h3><ul>
 <li>&#x3D;&#x3D;上下文&#x3D;&#x3D;：在中断发生时，要保存一定的状态[地址空间、内核态堆栈和硬件上下文。]以使从陷阱返回后能够接着执行原来的程序；<ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307184246872.png" alt="image-20220307184246872" style="zoom:67%;" />
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307184246872.png" alt="image-20220307184246872" style="zoom:67%;">
 - 发生时钟中断的时候。
   - 运行进程的用户寄存器由==硬件==隐式保存，使用该==进程的内核栈==。
 - 操作系统决定从A 切换到B的时候。内核寄存器被==软件（即OS）==明确地保存，但这次被存储在该进程的==进程结构的内存==中。后一个操作让系统从好像刚刚由A 陷入内核，变成好像刚刚由B 陷入内核。</li>
@@ -378,7 +378,7 @@ main(int argc, char *argv[])
 <li>Test 1：</li>
 <li>3 个工作A、B 和C 在大致相同的时间（T 到达时间 &#x3D; 0）到达系统。运行时间都为10s。    </li>
 <li>周转时间为$（A&#x3D;10+B&#x3D;20+C&#x3D;30)&#x2F;3&#x3D;20s$</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307201642223.png" alt="image-20220307201642223" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307201642223.png" alt="image-20220307201642223" style="zoom:50%;"></li>
 </ul>
 </li>
 <li><p>Test 2：改变假设1，即&#x3D;&#x3D;工作运行时间不再完全相同&#x3D;&#x3D;</p>
@@ -387,7 +387,7 @@ main(int argc, char *argv[])
 </li>
 <li><p>周转时间为$（A&#x3D;100+B&#x3D;110+C&#x3D;120)&#x2F;3&#x3D;110s$</p>
 </li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307201650207.png" alt="image-20220307201650207" style="zoom:50%;" />
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307201650207.png" alt="image-20220307201650207" style="zoom:50%;">
 </li>
 <li><p>必须等到A【最耗时的】先完成才能运行接下来的任务</p>
 </li>
@@ -402,7 +402,7 @@ main(int argc, char *argv[])
 <li>最短任务优先（Shortest Job First，SJF）先运行最短的任务，然后是次短的任务;<ul>
 <li>对于Test 2：<ul>
 <li>周转时间为$（A&#x3D;120+B&#x3D;10+C&#x3D;20)&#x2F;3&#x3D;50s$</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307201630262.png" alt="image-20220307201630262" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307201630262.png" alt="image-20220307201630262" style="zoom:50%;"></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +410,7 @@ main(int argc, char *argv[])
 <li>Test 3：改变假设2，&#x3D;&#x3D;任务不再完全同时到达&#x3D;&#x3D;；<ul>
 <li>A在t&#x3D;0时到达，且需要运行100s。而B 和C 在t &#x3D; 10 到达，且各需要运行10s。</li>
 <li>周转时间为$（A&#x3D;100+B&#x3D;(110-10)+C&#x3D;(120-10))&#x2F;3&#x3D;103.333s$</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307201613667.png" alt="image-20220307201613667" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307201613667.png" alt="image-20220307201613667" style="zoom:50%;"></li>
 </ul>
 </li>
 </ul>
@@ -418,7 +418,7 @@ main(int argc, char *argv[])
 <li>最短完成时间优先（STCF）,也称抢占式最短作业优先（Preemptive Shortest Job First ，PSJF）<ul>
 <li>每当新工作进入系统时，它就会确定剩余工作和新工作中，谁的剩余时间最少，然后调度该工作；</li>
 <li>对于Test 3：周转时间为$(A&#x3D;120+B&#x3D;10+C&#x3D;20)&#x2F;3&#x3D;50s$</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307201554245.png" alt="image-20220307201554245" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307201554245.png" alt="image-20220307201554245" style="zoom:50%;"></li>
 </ul>
 </li>
 </ul>
@@ -438,14 +438,14 @@ main(int argc, char *argv[])
 </li>
 <li>Test 4：假设3 个任务A、B 和C 在系统中同时到达，并且它们都希望运行5s。<ul>
 <li>RR 的平均响应时间是：（0 + 1 + 2）&#x2F;3 &#x3D; 1;</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307202653969.png" alt="image-20220307202653969" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307202653969.png" alt="image-20220307202653969" style="zoom:50%;"></li>
 <li>SJF 算法平均响应时间是：(0 + 5 + 10)&#x2F; 3 &#x3D; 5。<ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307202703855.png" alt="image-20220307202703855" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307202703855.png" alt="image-20220307202703855" style="zoom:50%;"></li>
 </ul>
 </li>
 <li>时间片越短，RR 在响应时间上表现越好。但时间片过短会导致上下文切换的成本将影响整体性能。</li>
 <li>最好是使其足够长，以便摊销（amortize）上下文切换成本，而又不会使系统不及时响应。</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307202946250.png" alt="image-20220307202946250"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307202946250.png" alt="image-20220307202946250"></li>
 <li>上下文切换的成本不仅仅来自保存和恢复少量寄存器的操作系统操作。程序运行时，它们在&#x3D;&#x3D;CPU 高要缓存、TLB、分支预测器和其他片&#x3D;&#x3D;上硬件中建立了大量的状态。切换到另一个工作会导致此状态被刷新，且与当前运行的作业相关的&#x3D;&#x3D;新状态被引入&#x3D;&#x3D;；</li>
 </ul>
 </li>
@@ -454,7 +454,7 @@ main(int argc, char *argv[])
 <li>Test 6：改变假设4，所有程序都执行I&#x2F;O<ul>
 <li>在工作发起I&#x2F;O 请求时，应该在CPU上安排另一项工作。因为此时该进程被阻塞直到I&#x2F;O完成；</li>
 <li>在I&#x2F;O 完成时产生中断，操作系统运行并将发出I&#x2F;O 的进程从阻塞状态移回就绪状态。</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220307204407598.png" alt="image-20220307204407598" style="zoom:50%;" /></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220307204407598.png" alt="image-20220307204407598" style="zoom:50%;"></li>
 <li>A 和B，每项工作需要50ms 的CPU时间。A 运行10ms，然后发出I&#x2F;O 请求（假设I&#x2F;O 每个都需要10ms），而B 只是使用CPU 50ms，不执行I&#x2F;O。</li>
 </ul>
 </li>
@@ -464,7 +464,7 @@ main(int argc, char *argv[])
 <li>规则：设置不同优先级的队列，每个任务处在且只在一个队列中。MLFQ首先运行高优先级的队列中程序；</li>
 <li>Rule 1: A的优先级&gt;B的,运行A;</li>
 <li>Rule 2: A的优先级&#x3D;B的优先级，轮转运行;<ul>
-<li>这样的&#x3D;&#x3D;问题&#x3D;&#x3D;是<img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220310145009312.png" alt="image-20220310145009312" style="zoom: 33%;" /></li>
+<li>这样的&#x3D;&#x3D;问题&#x3D;&#x3D;是<img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220310145009312.png" alt="image-20220310145009312" style="zoom: 33%;"></li>
 <li>上边的一直吃肉，下边的汤都没有；</li>
 </ul>
 </li>
@@ -517,13 +517,13 @@ main(int argc, char *argv[])
 </ul>
 <h5 id="不公平指标-U（unfairness-metric）："><a href="#不公平指标-U（unfairness-metric）：" class="headerlink" title="不公平指标 U（unfairness metric）："></a>不公平指标 U（unfairness metric）：</h5><ul>
 <li>两个工作完成时刻相除得到 U的值。越接近1越公平<ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220314211806835.png" alt="image-20220314211806835"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220314211806835.png" alt="image-20220314211806835"></li>
 <li>对于彩票调度，只有执行非常多的时间片时，彩票调度算法才能得到期望的结果。</li>
 </ul>
 </li>
 </ul>
 <h5 id="步长调度："><a href="#步长调度：" class="headerlink" title="步长调度："></a>步长调度：</h5><p>当需要进行调度时，选择目前拥有最小行程值的进程，并且在运行之后将该进程的行程值增加一个步长。</p>
-<p><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220314212143976.png" alt="image-20220314212143976"></p>
+<p><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220314212143976.png" alt="image-20220314212143976"></p>
 
       
 

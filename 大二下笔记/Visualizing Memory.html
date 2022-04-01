@@ -15,19 +15,19 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="title:Visualizing Memory内存虚拟化：一、地址空间 为了达成多道程序和时分共享，需要将内存抽象化：  需要切换程序，需要将程序状态信息放到内存中【若放到磁盘中就太慢了） 多个程序之间需要隔离；   定义:运行的程序看到的系统内存，包含进程的所有内存状态  结构  程序代码  堆：动态分配，用户管理内存（比如new），长期需求，由程序员显式申请和释放   未分配  栈： 函数">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220321154248419.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220321154423598.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220321154739262.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220324150610458.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220321182908187.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220324144319099.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220324145711172.png">
-<meta property="og:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220331152602479.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220321154248419.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220321154423598.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220321154739262.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220324150610458.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220321182908187.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220324144319099.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220324145711172.png">
+<meta property="og:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220331152602479.png">
 <meta property="article:published_time" content="2022-04-01T00:49:45.927Z">
 <meta property="article:modified_time" content="2022-04-01T00:49:45.927Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:/OneDrive/Molaison_notes/markdown_image/image-20220321154248419.png">
+<meta name="twitter:image" content="http://example.com/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive/Molaison_notes/markdown_image/image-20220321154248419.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -313,7 +313,7 @@
 </li>
 <li><p>表示栈[反向增长]:</p>
 <ul>
-<li>反向偏移:<img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220321154248419.png" alt="image-20220321154248419"></li>
+<li>反向偏移:<img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220321154248419.png" alt="image-20220321154248419"></li>
 </ul>
 </li>
 <li><p>外部碎片</p>
@@ -339,7 +339,7 @@
 <li><p>在堆上管理空闲空间的数据结构通常称为空闲列表（freelist）。</p>
 <ul>
 <li>该结构包含了管理内存区域中所有空闲块的引用。</li>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220321154423598.png" alt="image-20220321154423598"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220321154423598.png" alt="image-20220321154423598"></li>
 </ul>
 </li>
 <li><p>目标</p>
@@ -355,7 +355,7 @@
 </li>
 <li><p>实际分配内存结构:</p>
 <ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220321154739262.png" alt="image-20220321154739262"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220321154739262.png" alt="image-20220321154739262"></li>
 <li>malloc库使用的头部：htpr指向，包含<ul>
 <li>实际分配大小</li>
 <li>魔数（正常性检验），即包含分配内存空间的相关信息</li>
@@ -422,10 +422,10 @@
 <li>找到正在运行进程的页表所在的内存地址，包含基址寄存器</li>
 <li>找到VPN对应的FPN，进而确定对应的页帧以及偏移位置</li>
 </ol>
-<img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220324150610458.png" alt="image-20220324150610458" style="zoom: 50%;" />
+<img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220324150610458.png" alt="image-20220324150610458" style="zoom: 50%;">
 
 <h4 id="5-缺点"><a href="#5-缺点" class="headerlink" title="5.缺点"></a>5.缺点</h4><p>速度慢：由于需要进行一次VPN和offset的计算，同时还要到内存中进行一个页表的查询</p>
-<p>浪费大：页表可能会造成很大的内存损失<img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220321182908187.png" alt="image-20220321182908187"></p>
+<p>浪费大：页表可能会造成很大的内存损失<img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220321182908187.png" alt="image-20220321182908187"></p>
 <h3 id="六、快速地址转换（TLB）"><a href="#六、快速地址转换（TLB）" class="headerlink" title="六、快速地址转换（TLB）"></a>六、快速地址转换（TLB）</h3><h4 id="1-目标"><a href="#1-目标" class="headerlink" title="1.目标"></a>1.目标</h4><p>为了每次指令获取、显式加载存储或保存额外读取时造成的分页读取缓慢问题, 引入地址转换旁路缓冲存储器（TLB），虚拟地址到物理地址的硬件缓存</p>
 <h4 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h4><ul>
 <li><p>TLB：VPN|PFN|其他位，用户地址占地址空间的一半，剩余留给内核</p>
@@ -442,7 +442,7 @@
 <li><p>上下文切换：</p>
 <ol>
 <li>在页表基址寄存器变化时，清空TLB（将全部有效位置0）<ul>
-<li><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220324144319099.png" alt="image-20220324144319099"></li>
+<li><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220324144319099.png" alt="image-20220324144319099"></li>
 </ul>
 </li>
 <li>TLB中加入进程标识符（address space identifier）</li>
@@ -453,7 +453,7 @@
 <p>随机替换：可以避免一种极端情况。例如，一个程序循环访问n+1个页，但TLB大小只能存放n个页。LRU策略每次访问内存都会触发TLB未命中；</p>
 <h3 id="七、小表分页"><a href="#七、小表分页" class="headerlink" title="七、小表分页"></a>七、小表分页</h3><h4 id="1-目标-1"><a href="#1-目标-1" class="headerlink" title="1.目标"></a>1.目标</h4><p>解决页表太大占据内存的问题</p>
 <p>页表大小&#x3D;log2(地址空间&#x2F;页的大小）*页表项大小</p>
-<p><img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220324145711172.png" alt="image-20220324145711172"></p>
+<p><img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220324145711172.png" alt="image-20220324145711172"></p>
 <h4 id="2-更大的页"><a href="#2-更大的页" class="headerlink" title="2.更大的页"></a>2.更大的页</h4><p>更大的页当然可以缩小页表的大小，但是也会造成每一页内部碎片的浪费。</p>
 <h4 id="3-分页和分段的结合"><a href="#3-分页和分段的结合" class="headerlink" title="3.分页和分段的结合"></a>3.分页和分段的结合</h4><p>为堆、栈、代码分别提供一个页表，每个页表有一个基址寄存器和界限寄存器</p>
 <p>能够省去为没有使用页的内存分配</p>
@@ -462,7 +462,7 @@
 <li>如果整页的页表项都无效，那么就不分配页表来表示</li>
 <li>页目录：告知页表的页在哪里，页表的整个页是否包含有效页</li>
 <li>二级页表：起始指针指向一个页目录，页目录中存储着PFN，其对应着不同页表的位置，再去对应页表中查出页的物理位置</li>
-<li>多级页表：由于页表是页的大小，如果地址空间过于大，页很小，那么二级页表可能就不够了，页目录索引1,2<img src="D:\OneDrive\Molaison_notes\markdown_image\image-20220331152602479.png" alt="image-20220331152602479"></li>
+<li>多级页表：由于页表是页的大小，如果地址空间过于大，页很小，那么二级页表可能就不够了，页目录索引1,2<img src="/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%AC%94%E8%AE%B0/OneDrive\Molaison_notes\markdown_image\image-20220331152602479.png" alt="image-20220331152602479"></li>
 <li>缺点：<ul>
 <li>如果TLB未命中，那么需要更多次的查找</li>
 </ul>
