@@ -1,0 +1,991 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>基因工程学习笔记 | Molaison's blogs</title><meta name="keywords" content="biology"><meta name="author" content="Molaison"><meta name="copyright" content="Molaison"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="主要包含了基因工程前几章的内容, 只能是对最基本的内容有一定了解.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基因工程学习笔记">
+<meta property="og:url" content="https://github.com/Molaison/Molaison.github.io/2022/10/14/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Molaison&#39;s blogs">
+<meta property="og:description" content="主要包含了基因工程前几章的内容, 只能是对最基本的内容有一定了解.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-10-14T02:05:40.000Z">
+<meta property="article:modified_time" content="2023-06-10T05:55:39.577Z">
+<meta property="article:author" content="Molaison">
+<meta property="article:tag" content="biology">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018082037.png"><link rel="canonical" href="https://github.com/Molaison/Molaison.github.io/2022/10/14/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基因工程学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-10 13:55:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018081403.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Molaison's blogs</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">基因工程学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-14T02:05:40.000Z" title="发表于 2022-10-14 10:05:40">2022-10-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-10T05:55:39.577Z" title="更新于 2023-06-10 13:55:39">2023-06-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/basic-knowledge/">basic knowledge</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>17分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="基因工程学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h3 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h3><ul>
+<li><p>Basic steps in gene cloning</p>
+<ul>
+<li>将DNA片段插入载体;</li>
+<li>导入宿主细胞</li>
+<li>recombinant molecule 复制</li>
+<li>宿主细胞分裂</li>
+<li>plating产生clony</li>
+</ul>
+</li>
+<li><p>basic steps in PCR:特异引物识别DNA片段从而使其被复制从而富集</p>
+<ul>
+<li>94°C 氢键断开, 双链分开</li>
+<li>50-60°C, DNA与引物杂交, 退火</li>
+<li>74°C, Taq DNA polymerase(抗高温), 引物5’-&gt;3’复制</li>
+<li>94°C下一轮循环</li>
+</ul>
+</li>
+<li>Limitation of PCR:<ul>
+<li>必须知道退火位点,也即知道引物结合地方序列;</li>
+<li>长度限制: <strong>5kb-40kb</strong>(特殊技术可以最高复制40kb)</li>
+</ul>
+</li>
+<li>usage: <ul>
+<li>virus dectation: 高倍扩增</li>
+<li>purifying gene</li>
+</ul>
+</li>
+</ul>
+<h3 id="载体"><a href="#载体" class="headerlink" title="载体"></a>载体</h3><h4 id="Plasmid"><a href="#Plasmid" class="headerlink" title="Plasmid"></a>Plasmid</h4><ul>
+<li>载体要求:<ul>
+<li>能够在宿主体内复制: 含有复制起点</li>
+<li>理想大小小于10kb,大了会断开,而且不易于操作;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1420221014110645.png" alt=""></li>
+</ul>
+</li>
+<li>宿主细胞:大肠杆菌, <strong>一次只接受一个质粒拷贝</strong>;</li>
+<li>类型I: plasmids,<ul>
+<li>环形分子</li>
+<li>独立于基因组</li>
+<li>携带一个或多个基因<ul>
+<li>携带抗体基因可作为选择性标签,四环素和青霉素抗性基因;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>质粒复制方式:<ul>
+<li>integrative:插入宿主基因组复制</li>
+<li>non-integrative:含有复制起始位点，独立复制,也称为episome;</li>
+</ul>
+</li>
+<li>copy number: 宿主体内独立存在的质粒分子数；<ul>
+<li>stringent:少但是大, 1-2/cell</li>
+<li>relaxed:多, over 50/cell</li>
+</ul>
+</li>
+<li>conjugation:<ul>
+<li>物理接触</li>
+<li>产生pilus(管道?)</li>
+<li>宿主DNA滚环复制并转移到受体中</li>
+<li>conjugative&amp;non-conjugative:产生pilus or not;<ul>
+<li>由于conjugative plasmid 会传播至其他细胞;</li>
+<li><strong>tra基因控制</strong>(含有则conjugative)</li>
+</ul>
+</li>
+<li>compatibility:是否两质粒能共存;<ul>
+<li>incompatiblity:在复制过程中两个子代细胞分别获得一个</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>F plasmid/F factor: 含有tra基因,conjugative;</li>
+</ul>
+<h4 id="Bacteriophage-Phage"><a href="#Bacteriophage-Phage" class="headerlink" title="Bacteriophage(Phage)"></a>Bacteriophage(Phage)</h4><ul>
+<li>噬菌体特征:<ul>
+<li>侵染细菌</li>
+<li>结构简单</li>
+<li>含有DNA|RNA:编码复制的基因</li>
+<li>Capsid:外衣</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>类型I:λ phage<ul>
+<li>episome</li>
+<li>环状和线性DNA之间切换(cos位点)</li>
+<li>基因成簇排列</li>
+<li>裂解型</li>
+<li>感染时间小于20min</li>
+<li>基因组大小49kb</li>
+</ul>
+</li>
+<li>prophage:整合进基因组的噬菌体DNA;</li>
+<li>lysogen:携带prophage的宿主;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1420221014111709.png" alt=""><ul>
+<li>编码capsid的基因成簇排列</li>
+<li>便于控制基因组表达</li>
+<li>b2 region: 可以删掉以增加能放进capsid的<strong>外源DNA长度</strong></li>
+</ul>
+</li>
+<li>cos site:sticky end<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1420221014112239.png" alt=""></li>
+<li>线性的DNA分子通过两cos位点环化，从宿主基因组脱离</li>
+<li>内切酶识别序列，能够将滚环复制得到的长链切断成单个噬菌体基因组</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>类型II:M13<ul>
+<li>环状, 但是却是<strong>单链DNA</strong></li>
+<li>不发生细胞裂解，M13颗粒<strong>持续释放</strong></li>
+<li>capsid由三个基因的多份拷贝(不是多次复制)编码</li>
+<li>不发生整合</li>
+</ul>
+</li>
+<li>M13复制流程:<ul>
+<li>单链DNA注入并合成双链，称为RF，复制态</li>
+<li>双链DNA 通过滚环复制生成新的RF<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1420221014113837.png" alt=""></li>
+</ul>
+</li>
+<li>双链replicative form(RF)通过滚环机制重新产生单链DNA(滚环但是不复制)</li>
+<li>单链DNA环化并组装</li>
+</ul>
+</li>
+<li>M13的优势:<ul>
+<li>基因组小于10kb;</li>
+<li>RF类似质粒,能够以质粒形式感染;</li>
+<li>单链形式DNA有利于测序和体外突变(in vitro mutagenesis);还能用于phage display(将要表达的蛋白基因和衣壳基因连在一起使其位于噬菌体外部)</li>
+</ul>
+</li>
+</ul>
+<h3 id="DNA纯化"><a href="#DNA纯化" class="headerlink" title="DNA纯化"></a>DNA纯化</h3><ul>
+<li>Terminology:<ul>
+<li>Total cell DNA: genomic DNA加上additional DNA molecules(如质粒)</li>
+<li>Pure plasmid DNA:从细菌中提取,去除genomic DNA后的;</li>
+<li>Phage DNA:from bacteriophage particles<ul>
+<li>需要去除衣壳(M13除外,RF直接na)</li>
+</ul>
+</li>
+<li>Defined medium: all the components are known(M9)</li>
+<li>Undefined medium:the precise identity and quantity of the components are not known(LB)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Basic steps:<ul>
+<li>细菌培养<ul>
+<li>E.coli培养:<ul>
+<li>LB medium</li>
+<li>37°C</li>
+<li>摇床充气</li>
+</ul>
+</li>
+<li>检测细胞浓度:<ul>
+<li>光学法:测量在600nm处的吸光度(光密度OD是在特定波长下的吸光度)</li>
+<li>$1\ OD_{600} = 0.8\times 10^9\ cells/ml$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>离心使细胞裂解</li>
+<li>细胞抽提(去除除DNA外组分)<ul>
+<li>物理方法:研磨</li>
+<li>化学方法:<ul>
+<li>溶菌酶:digests the cell wall</li>
+<li>EDTA: removes magnesium ions</li>
+<li>sodium dodecyl sulphate (SDS):removes lipid molecules.</li>
+<li>离心:remove insoluble debris</li>
+</ul>
+</li>
+<li>DNA纯化:<ul>
+<li>方法1:降解污染物<ul>
+<li>proteinase K处理: 消化蛋白质;</li>
+<li>苯酚和氯仿混合(Phenol&amp;chloroform):沉淀蛋白质</li>
+<li>ribonuclease:去除RNA</li>
+</ul>
+</li>
+<li>方法2:组分分离<ul>
+<li>离子交换层析:DNA, RNA,部分蛋白质带负电结合与正电树脂,随后盐溶液洗脱,RNA+protein首先脱出,<strong>DNA最后,保留</strong>;</li>
+<li>silica method:<ul>
+<li>guanidinium thiocyanate硫氰酸胍：将除DNA外的物质变性, 同时使得DNA结合于silica particles;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNA富集:<ul>
+<li>Ethanol precipitation:$Na^+$, -20°C条件</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1520221015095725.png" alt=""><ol>
+<li>玻璃棒搅动附着DNA</li>
+<li>离心沉淀DNA</li>
+</ol>
+</li>
+<li>DNA浓度: 测量在260nm波长时的吸光度<ul>
+<li>$1 \ OD_{260} = 50\ ug/ml$</li>
+</ul>
+</li>
+<li>DNA纯度:<ul>
+<li>The ratio of the absorbances at 260 and 280 nm </li>
+<li>around <strong>1.8</strong> with a pure DNA sample.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>分离质粒和细菌基因组:<ul>
+<li>物理性质:<ul>
+<li>质粒DNA分子较小, 细菌基因组较大</li>
+<li>质粒和细菌基因组都为环状,但是在细胞抽提时基因组会断裂成线性分子,所以我们要做的是分离环状DNA分子;</li>
+</ul>
+</li>
+<li>质粒DNA双链的两种形式:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1520221015175437.png" alt=""><ul>
+<li>Covalently closed circular (ccc) DNA (Supercoiled DNA) </li>
+<li>Open-circular (oc) DNA</li>
+</ul>
+</li>
+<li>超螺旋分子能很轻易地从非超螺旋分子中分离,且大多数质粒以超螺旋形式存在于细胞中;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1520221015175849.png" alt=""><ul>
+<li>alkaline denaturation:碱变性法</li>
+<li>线性DNA在高PH时变性双链分开,而超螺旋质粒则保持原样;</li>
+<li>再将PH调回7,DNA分子复性,但交织在一起,通过离心被去除;</li>
+<li>这一过程大部分RNA和蛋白质也变得不溶, 被离心去除;</li>
+</ul>
+</li>
+<li>氯化铯密度梯度离心:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1520221015180554.png" alt=""></li>
+<li>密度不同，导致蛋白质(浮力小)在管的顶部，而RNA则相反在底部,DNA的浮力密度在蛋白质与RNA之间故而在管中间;</li>
+<li>EtBr处理:分离超螺旋DNA和其他DNA<ul>
+<li>EtBr通过插入相邻碱基对与DNA结合，导致双螺旋部分解开。</li>
+<li>超螺旋不易结合故而浮力密度减少较少,而线性分子减少较多;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>质粒扩增:</p>
+<ul>
+<li>多拷贝质粒能够在没有蛋白质合成的情况下复制</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1520221015182120.png" alt=""><ul>
+<li>氯霉素, 蛋白质合成抑制;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>λ噬菌体DNA获取:</p>
+<ul>
+<li>获取噬菌体颗粒: 侵染后离心后噬菌体颗粒在清液层,而细菌沉积;<ul>
+<li>噬菌体分为烈性噬菌体和溶原性噬菌体;<ul>
+<li>在感染于寄主细菌细胞时，前者往往在菌体内增殖并将菌体裂解；</li>
+<li>后者则不使细菌裂解，而成为与细胞同步增殖的遗传因子——原噬菌体。</li>
+<li>温和噬菌体的基因组整合于宿主菌基因中，这种整合在细菌染色体上的噬菌体基因称为原噬菌体，原噬菌体可随细菌染色体的复制而复制，并通过细菌的分裂传给下一代，不引起细菌裂解，这种带有原噬菌体的细菌称为溶原性细菌。</li>
+</ul>
+</li>
+<li>lysogenic型λ噬菌体获取:<ul>
+<li>cI基因:控制噬菌体处于prophage状态;<ul>
+<li>在cI内引入一个温度敏感突变(temperature-sensitive,即cIts)</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016144732.png" alt=""><ul>
+<li>30°C:正常分裂;</li>
+<li>42°C:裂解;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>non-lysogenic型λ噬菌体获取:<ul>
+<li>许多载体都删除了cI基因,无法整合入细菌基因组;</li>
+<li>所以只能通过细胞裂解获得噬菌体,故而需要注意噬菌体与细菌的比例;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017100510.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>富集噬菌体颗粒:<ul>
+<li>PEG,一种长链多聚化合物,在有盐的条件下能够让噬菌体颗粒沉淀;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016150415.png" alt=""><ul>
+<li>能够有效减少悬液的体积,有助于DNA提取;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>噬菌体颗粒提纯:氯化铯密度梯度离心;<ul>
+<li>去除细菌残骸,DNA;</li>
+</ul>
+</li>
+<li>DNA提取:只要去除蛋白外壳即可,苯酚或者蛋白酶处理;</li>
+</ul>
+</li>
+<li>M13噬菌体DNA获取:<ul>
+<li>Replicative form形式同质粒一样获取;</li>
+<li>单链DNA形式获取:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016151156.png" alt=""></li>
+<li>类似λ烈性菌;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Manipulation-of-Purified-DNA"><a href="#Manipulation-of-Purified-DNA" class="headerlink" title="Manipulation of Purified DNA"></a>Manipulation of Purified DNA</h3><ul>
+<li>DNA外切酶:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016151825.png" alt=""></li>
+<li>直接移除双链末端碱基对;</li>
+<li>移除双链中一条单链的末端核苷酸;</li>
+</ul>
+</li>
+<li>DNA内切酶:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016151904.png" alt=""><ol>
+<li>只能切开单链，或者双链中裸露的单链;</li>
+<li>既可以切单链也可以切双链;</li>
+<li>在特异性位点切割双链;</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>DNA连接酶: </p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016152028.png" alt=""><ol>
+<li>连接双链中的单链断开</li>
+<li>连接两双链分子</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>DNA聚合酶:</p>
+<ul>
+<li>需要有双链区(primer)起始聚合;</li>
+<li>DNA聚合酶I<ul>
+<li>5’-3’外切酶活性由一个323氨基酸片段决定，失去这一片段不影响聚合酶功能，但是无法解聚DNA, 缺失该片段后的酶,叫做Klenow fragment;(注意是这个修改后的<strong>酶!!!</strong>)</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016152320.png" alt=""><ul>
+<li>修复功能通过替换旧链方式实现，当5’-3’外切酶功能失去后，只能填充缺口，无法切除确实部分;</li>
+<li>注意5’-3’外切酶,缺口处理方向;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Taq DNA polymerase:<ul>
+<li>耐高温的嗜热菌DNA聚合酶I</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNA modifying enzymes<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016153508.png" alt=""><ol>
+<li>去除5‘端末端磷酸基团</li>
+<li>重新在5’端接上磷酸基团</li>
+<li>将脱氧核苷酸加到DNA链(单双)3‘末端(OH基团)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>限制性内切酶:<ul>
+<li>Host-controlled restriction:宿主细胞能够在噬菌体复制之前切割噬菌体DNA,而细菌自身的DNA受到保护，不会被降解，因为它被甲基修饰。<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016153754.png" alt=""></li>
+</ul>
+</li>
+<li>II型限制性内切酶在基因克隆中很重要。</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016154517.png" alt=""><ul>
+<li>识别位点为回文序列；</li>
+<li>II限制性内切酶有相同的亚基，识别的序列必然相同；</li>
+<li>两亚基位置不平行，故而结合位置有差异, 所以产生粘性末端;</li>
+<li><strong>BamHI和BglII具有相同的粘性末端</strong>;</li>
+<li>还需要注意的是切割出的粘性末端长度:<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016154931.png" alt=""><ul>
+<li>如EcoRI,切割”G|AATTC”,但是由于对称结构,左右两边各留出一个核苷酸,粘性末端为”AATT”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>restriction digest:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016155432.png" alt=""></li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016155445.png" alt=""></li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016155458.png" alt=""><ul>
+<li>Ethidium bromide (EtBr):前面说到能够插入DNA双链,同时也能用来给DNA染色;</li>
+</ul>
+</li>
+<li>DNA分子大小评估:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016155656.png" alt=""><ul>
+<li>a size marker;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016155856.png" alt=""><ul>
+<li>使用不同的酶切割获取不同的基因;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNA ligation:<ul>
+<li>互补粘性末端的连接比钝性末端要高效的多;<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016160405.png" alt=""></li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016160207.png" alt=""></li>
+</ul>
+</li>
+<li>Putting sticky ends onto a blunt-ended molecule:<ul>
+<li>Linkers<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016160554.png" alt=""><ul>
+<li>There should not be any BamHI recognition site in the fragment!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Adaptors<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016163527.png" alt=""></li>
+<li>实际上是带有粘性末端的片段;</li>
+<li>Part c是可能的问题:adaptor相互连接;<ul>
+<li>解决办法:将粘性末端突出链(5’端)的磷酸基团去除,从而无法互相结合</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016164034.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Producing sticky ends by homopolymer tailing<ul>
+<li>Terminal deoxynucleotidyl transferase:末端转移酶,见上文 DNA modifying enzymes;能够往3’端添加核苷酸;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1620221016164509.png" alt=""><ul>
+<li>目的基因加poly C,载体加poly G,结合稳定;</li>
+<li>polymer长度不同的问题: Klenow polymerase+ligase</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Introduction-of-DNA-into-Living-cells"><a href="#Introduction-of-DNA-into-Living-cells" class="headerlink" title="Introduction of DNA into Living cells"></a>Introduction of DNA into Living cells</h3><ul>
+<li><p><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017162039.png" alt=""></p>
+<ul>
+<li>未连接的载体</li>
+<li>未连接的DNA</li>
+<li>自体连接的载体</li>
+<li>携带错误片段的分子</li>
+</ul>
+</li>
+<li><p>[质粒DNA引入]Transformation:the introduction of any DNA molecule into any living cell.</p>
+<ul>
+<li>只有少部分物种能够轻松转化;</li>
+<li>大肠杆菌只吸收少量DNA;</li>
+<li>大肠杆菌需要化学或者物理处理使得其competent;<ul>
+<li>competent: DNA吸收能力增强的细菌培养物;</li>
+</ul>
+</li>
+<li>Competent treatment:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017163651.png" alt=""></li>
+</ul>
+<ol>
+<li>calcium chloride($CaCl_2$)溶液,低温处理;<ul>
+<li>氯化钙能使DNA沉积于细胞表面;</li>
+<li>同时造成细胞膜产生物理变化(如打出孔)</li>
+</ul>
+</li>
+<li>将温度提升到42°C,使得DNA被吸收</li>
+<li>检测是否吸收完成|稳定:通过判断某些基因是否表达(如表达青霉素抗性的基因)</li>
+</ol>
+</li>
+<li>Select transformed cells:<ul>
+<li>1 ng pUC8质粒只能够产生100-10000个转化体, 仅为总DNA分子数的0.01%,故而要经过挑选;</li>
+<li>抗生素选择:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017164600.png" alt=""><ul>
+<li>用共有抗性 amp 筛选出载体分子和重组分子(不含载体的被筛去); </li>
+<li>需要37°C培养1小时以让抗性基因表达;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Recombinant identification<ul>
+<li>插入失活:正常表达的载体含有的选择性标签由于目的基因的插入而失活;<ul>
+<li>插入后原本表达的特征不表达;</li>
+</ul>
+</li>
+<li>抗生素抗性基因选择(pBR22):<ul>
+<li>pBR22携带四环素和青霉素抗性[BamHI插入]</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017164159.png" alt=""></li>
+<li>用木板记录下菌落位置,并按位置移植到$tet^R$培养基中,重组分子由于插入失活从而无法生长, 在第一个中<strong>取反</strong>即可得知重组分子菌落位置;</li>
+</ul>
+</li>
+<li>lac基因选择(pUC8):<ul>
+<li>pUC8携带青霉素抗性基因[BamHI插入]</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017165754.png" alt=""><ul>
+<li>半乳糖苷酶由两部分组成:一部分由宿主编码(编辑过的大肠杆菌,缺失了编码lacZ’的部分),另一部分由质粒表达,组合成全酶;</li>
+<li>X-gal:乳糖类似物,被半乳糖苷酶分解生成深蓝色产物;</li>
+<li><blockquote>
+<p>IPTG: 在没有乳糖存在时，lac操纵子（元）处于阻遏状态。此时，I序列在PI启动序列操纵下表达的Lac阻遏蛋白与O序列结合，阻碍RNA聚合酶与P序列结合，抑制转录启动。当有乳糖存在时，lac操纵子（元）即可被诱导。在这个操纵子（元）体系中，真正的诱导剂并非乳糖本身。乳糖进入细胞，经β-半乳糖苷酶催化，转变为异乳糖。后者作为一种诱导剂分子结合阻遏蛋白，使蛋白构象变化，导致阻遏蛋白与O序列解离、发生转录。异丙基硫代半乳糖苷（IPTG）的作用与异乳糖相同，是一 种作用极强的诱导剂，不被细菌代谢而十分稳定，因此被实验室广泛应用。</p>
+</blockquote>
+</li>
+<li>由于recombinants中的lac基因被插入失活,故而无法合成半乳糖苷酶片段,无法分解X-gal,呈现白色;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[噬菌体DNA引入]transfection&amp;in vitro packaging:<ul>
+<li>transfection: equivalent to transformation;<ul>
+<li>M13双链的RF形式DNA导入</li>
+</ul>
+</li>
+<li>in vitro packaging: <ul>
+<li>λ噬菌体转染效率低,使用in vitro packaging方法;</li>
+<li>capsid 蛋白准备:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017180750.png" alt=""><ul>
+<li>系统1: 缺陷cos位点,cos位点无法被识别, 致使λ噬菌体无法复制(滚环需要环状DNA),但是能够合成蛋白;</li>
+<li>系统2:有两个重组, 两个所携带capsid基因中分别有一个突变,生成的蛋白不全,故而无法独立完成感染循环,将之混合后能够进行组装从而获得噬菌体.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>噬菌斑:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017181342.png" alt=""><ul>
+<li>对于λ噬菌体:包含裂解的宿主细胞和噬菌体颗粒;</li>
+<li>对于M13:包含生长缓慢的细菌和M13颗粒;</li>
+</ul>
+</li>
+<li>每个噬菌斑来自于单个感染的细胞;</li>
+<li>可能是recombinants,也可能是self-ligated vectors;</li>
+</ul>
+</li>
+<li>Select recombinant phages:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017181727.png" alt=""></li>
+<li>lac基因插入失活:recombinant的噬菌斑不是white,而是clear!</li>
+<li>λ cI基因插入失活:non-recombinant的cI基因正常工作,形成lysogen,故而呈现浑浊噬菌斑;</li>
+<li>Spi表型:λ噬菌体不能感染P2噬菌体已经感染的大肠杆菌,称之为$Spi^+$;<ul>
+<li>插入新的DNA能够使λ转变为$Spi^-$,从而能够形成噬菌斑[也只有重组型可以];</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Cloning-Vectors-for-E-coli"><a href="#Cloning-Vectors-for-E-coli" class="headerlink" title="Cloning Vectors for E.coli"></a>Cloning Vectors for E.coli</h3><ul>
+<li>经典质粒:<ul>
+<li>pBR322<ul>
+<li>4363bp大小,体积小;</li>
+<li>青霉素和四环素抗性基因;</li>
+<li>15copies, 高拷贝数;</li>
+</ul>
+</li>
+<li>pBR327<ul>
+<li>比pBR22更高的拷贝数(30-45copies)</li>
+</ul>
+</li>
+<li>pUC8<ul>
+<li>500-700copies;</li>
+<li>青霉素抗性基因+lac’基因,能够完成重组体选择</li>
+<li>lac’基因上有一簇限制性位点,允许DNA片段两不同粘性末端;</li>
+</ul>
+</li>
+<li>pGEN3Z<ul>
+<li>青霉素抗性基因+lac’基因</li>
+<li>含有两promoter序列在lac’基因的两端,可以用于体外转录,从而允许双向转录;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>噬菌体载体:<ul>
+<li>lambda噬菌体:<ul>
+<li>大小问题: 噬菌体衣壳大小有限,能放入的DNA长度有限;<ul>
+<li>solution: 将无重要功能的b2区去除从而省出空间;</li>
+</ul>
+</li>
+<li>酶切位点问题:λ噬菌体有多个酶切位点(甚至对于同一个限制酶);<ul>
+<li>solution: 将分泌限制酶的E.coli突变体用λ噬菌体感染,如果只有产生突变的,去除了限制位点的噬菌体能形成噬菌斑;</li>
+<li>绝大部分的λDNA被降解, 少数剩下的(产生plaque)丢失了限制位点;</li>
+</ul>
+</li>
+<li>种类:<ul>
+<li>λ insertion vector:去除b2区得到,存在一个酶切位点;<ul>
+<li>普通λ基因组只能增加5%的DNA,也即3kb,否则放不进capsid,去除非必要区后,容量大大增加;</li>
+<li>λgt10:CI基因能够保持基因组在Prophage状态,含有EcoRI限制位点, 基因插入失活,从而产生clear plaque;携带8kb</li>
+<li>λ ZAPII:含有lacZ’基因,故而能够允许插入失活,并含有6个限制性位点;</li>
+</ul>
+</li>
+<li>replacemnet vector替换型载体: 含有一个stuffer区, 能够通过限制性位点替换掉Stuffer fragment;携带10kb;<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030150554.png" alt=""></li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030150710.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>λ噬菌体既可以用环状DNA以质粒形式转染,也可以使用liner形式(含有EcoRI和cos位点)<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030151520.png" alt=""></li>
+<li>cosmid : a plasmid that carries a <em>cos</em> site;<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030151734.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>所需的克隆数:N <ul>
+<li><script type="math/tex; mode=display">N = \frac{\log{1-\rho}}{\log{1-\frac{a}{b}}}</script></li>
+<li>$\rho$ = 在基因文库中gene of interest出现的概率;</li>
+<li>$a$ = 插入片段的大小</li>
+<li>$b$ = 基因组总大小;</li>
+</ul>
+</li>
+<li>M13噬菌体:<ul>
+<li>由于M13基因组基因相隔很近, 修改或者是删除这些基因将会导致RF的功能受阻,只有508个碱基的修改不会影响, 也即是复制起始位点所在区;</li>
+<li>插入<em>lacZ’</em>到起始位点后面的流程:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030154702.png" alt=""></li>
+<li>怎么做到将限制性位点插入lacZ’?<ul>
+<li>首先利用密码子的简并性, 突变得到EcoRI位点同时不改变lacZ’的功能;</li>
+<li>接着将两端有EcoRI粘性末端的polylinker(携带多个限制位点)插入lacZ’的限制位点;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030155050.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hybrid plasmid-M13 vectors (phagemids):杂交M13和质粒:<ul>
+<li>将M13的一部分DNA(形成RF的基因)导入pUC8从而使得质粒能像M13一样进行;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030165448.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Cloning-vectors-for-Eukaryotes"><a href="#Cloning-vectors-for-Eukaryotes" class="headerlink" title="Cloning vectors for Eukaryotes"></a>Cloning vectors for Eukaryotes</h2><ul>
+<li>出于某些特殊目的, 我们可能需要使用真核生物作为宿主:<ul>
+<li>为了获得大量药用蛋白;</li>
+<li>为了改变某个生物的性质,如为农作物添加除草剂抗性;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030174223.png" alt=""></li>
+</ul>
+</li>
+<li>真菌载体(酵母):<ul>
+<li>2 μm plasmid: </li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030174343.png" alt=""><ul>
+<li>REP1 and REP2 are  involved in replication of the  plasmid.</li>
+<li>FLP: 编码能够使质粒内重组的蛋白;</li>
+<li>copy numbers:70-200</li>
+</ul>
+</li>
+<li>selective marker:<ul>
+<li>LEU2: 编码将丙酮酸转化为亮氨酸的酶, 对于trp-营养缺陷型的宿主来说是必要的,故而以之作为宿主,再使用含LEU2的载体从而得到recombinant;</li>
+<li>其他的marker也类似,主要是使用缺陷型;</li>
+</ul>
+</li>
+<li>克隆载体:<ul>
+<li>种类:<ul>
+<li>Yeast episomal plasmids (YEps):<ul>
+<li>为shuttle vector, 能够同时在酵母和大肠杆菌中复制;<ul>
+<li>这一性质使得其能首先通过大肠杆菌进行纯化, 再转入酵母;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030183656.png" alt=""></li>
+</ul>
+</li>
+<li>载体通过与宿主基因组中同源的基因发生重组从而整合进基因组:<ul>
+<li>LEU突变体和酵母LEU基因发生重组.使得质粒进入酵母基因组,类似插入序列,会复制目标片段,形成两个基因,但通常只有一个有效</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030184555.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Yeast integrative plasmids (YIps) <ul>
+<li>跟episome的区别在于没有起始位点,只能通过整合进基因组和宿主一起复制;</li>
+</ul>
+</li>
+<li>Yeast replicative plasmids (YRps) <ul>
+<li>跟integrative相对, 以质粒形式复制;</li>
+</ul>
+</li>
+<li>Yeast centromere plasmids (YCps)<ul>
+<li>含有复制区和着丝粒,能够像基因组一样复制,故而被称为mini-chromosome;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>几种克隆载体比较:<ul>
+<li>转化频率:<ul>
+<li>加入一定量质粒DNA能获得的转化体数(个每微克)</li>
+<li>YEps &gt; YRps,YCps &gt;&gt; YIps</li>
+</ul>
+</li>
+<li>拷贝数:<ul>
+<li>YEps:20-50</li>
+<li>YRps:5-100</li>
+<li>YIps == YCps == 1</li>
+</ul>
+</li>
+<li>重组体稳定性: YIps &gt; YCps &gt; YEps &gt; YRps</li>
+</ul>
+</li>
+<li>特殊载体:YAC yeast artificial chromosome<ul>
+<li>组成成分:<ul>
+<li>centromere: 能够像基因组一样复制</li>
+<li>two telomeres:<ul>
+<li>作用1: 让末端能够正确地被复制;</li>
+<li>作用2: 避免其被外切酶消化;</li>
+</ul>
+</li>
+<li>复制起点;</li>
+</ul>
+</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030193821.png" alt=""><ul>
+<li>TEL: act as seeding sequences for telomeres building</li>
+<li>CEN4: DNA from the  centromere region of chromosome </li>
+<li>ori: The origins of replication</li>
+<li>SUP4: selectable marker into which new DNA is inserted. Yeast  are <strong>normally red</strong>(accumulation of red pigment), and those transformed with YAC will form <strong>colorless</strong> colonies.</li>
+<li>URA3 and TRP1: selectable markers.</li>
+</ul>
+</li>
+<li>Electroporation: <img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030194838.png" alt=""><ul>
+<li>电穿孔法:在膜上打出暂时的孔洞从而吸收DNA, 对于植物来说则是要多加两步, 去细胞壁和重新生成细胞壁;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>对于植物:<ul>
+<li>Ti(tumor inducing) plasmid:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030202015.png" alt=""></li>
+<li>Ti质粒转染后T-DNA会整合进基因组,从而使细胞表现出成瘤性</li>
+<li>Ti质粒过大, 不利于操作:<ul>
+<li>解决方法1: 双质粒法, 将T-DNA从原来的Ti质粒移出至质粒B,剩下质粒A;<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030203248.png" alt=""></li>
+<li>质粒A负责表达转移T-DNA的蛋白;</li>
+<li>质粒B则小到便于我们操作,从而能够添加限制位点;</li>
+</ul>
+</li>
+<li>解决方法2:共整合法,Ti质粒加上一个携带有T-DNA同源片段的质粒(含目的基因)<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030203237.png" alt=""></li>
+<li>T-DNA和小质粒发生同源重组,从而将目的基因转移到T-DNA中;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>T-DNA整合的机理:</li>
+</ul>
+</li>
+<li>质粒载体直接转移:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030203605.png" alt=""></li>
+<li>超螺旋质粒能够通过同源重组整合进植物基因组;</li>
+<li>导入细胞的方法: Biolistics,PEG-induced DNA delivery,Electroporation</li>
+</ul>
+</li>
+<li>将基因导入叶绿体基因组:<ul>
+<li>通过同源重组导入, 叶绿体数量多,表达量高;</li>
+</ul>
+</li>
+<li>植物病毒载体:<ul>
+<li>植物病毒多为RNA,仅有的两种DNA病毒不适合作为克隆载体;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>动物克隆载体:<ul>
+<li>部分蛋白在细菌或者真菌中无法正常表达;基因疗法,通过将一个基因导入病人细胞;</li>
+<li>P elements:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/3020221030204534.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/biology/">biology</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">机器学习杂记</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/07/Javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Javascript学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/09/03/GENEXII%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="GENEXII学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-03</div><div class="title">GENEXII学习笔记</div></div></a></div><div><a href="/2023/06/10/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%84%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="蛋白质组学学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-10</div><div class="title">蛋白质组学学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018081403.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Molaison</div><div class="author-info__description">Per Aspera Ad Astra.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="https://github.com/Molaison"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Molaison" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sub2pro@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/people/wang-er-zhi-88" target="_blank" title="知乎"><i class="fab fa-zhihu"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%AA%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">绪论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%BD%E4%BD%93"><span class="toc-number">2.</span> <span class="toc-text">载体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Plasmid"><span class="toc-number">2.1.</span> <span class="toc-text">Plasmid</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bacteriophage-Phage"><span class="toc-number">2.2.</span> <span class="toc-text">Bacteriophage(Phage)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNA%E7%BA%AF%E5%8C%96"><span class="toc-number">3.</span> <span class="toc-text">DNA纯化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Manipulation-of-Purified-DNA"><span class="toc-number">4.</span> <span class="toc-text">Manipulation of Purified DNA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction-of-DNA-into-Living-cells"><span class="toc-number">5.</span> <span class="toc-text">Introduction of DNA into Living cells</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cloning-Vectors-for-E-coli"><span class="toc-number">6.</span> <span class="toc-text">Cloning Vectors for E.coli</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cloning-vectors-for-Eukaryotes"><span class="toc-number"></span> <span class="toc-text">Cloning vectors for Eukaryotes</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/10/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%84%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="蛋白质组学学习笔记">蛋白质组学学习笔记</a><time datetime="2023-06-10T05:53:57.000Z" title="发表于 2023-06-10 13:53:57">2023-06-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/10/Linux-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86-Regex-is-all-you-need/" title="Linux 文本处理: Regex is all you need!">Linux 文本处理: Regex is all you need!</a><time datetime="2023-06-10T00:41:40.000Z" title="发表于 2023-06-10 08:41:40">2023-06-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/09/Linux-etc-%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3/" title="Linux /etc/ 目录详解">Linux /etc/ 目录详解</a><time datetime="2023-06-09T10:13:10.000Z" title="发表于 2023-06-09 18:13:10">2023-06-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/" title="机器学习杂记">机器学习杂记</a><time datetime="2022-11-27T07:45:26.000Z" title="发表于 2022-11-27 15:45:26">2022-11-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/14/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="基因工程学习笔记">基因工程学习笔记</a><time datetime="2022-10-14T02:05:40.000Z" title="发表于 2022-10-14 10:05:40">2022-10-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Molaison</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script type="text/javascript" src="/js/anchor_sign.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

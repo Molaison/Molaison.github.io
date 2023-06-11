@@ -1,0 +1,1064 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>GENEXII学习笔记 | Molaison's blogs</title><meta name="keywords" content="biology"><meta name="author" content="Molaison"><meta name="copyright" content="Molaison"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="GENEXII无愧于是分子生物学领域的顶级书籍, 不仅仅是介绍了分子生物学现象, 更重要的是其给出的high-level insight.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GENEXII学习笔记">
+<meta property="og:url" content="https://github.com/Molaison/Molaison.github.io/2022/09/03/GENEXII%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Molaison&#39;s blogs">
+<meta property="og:description" content="GENEXII无愧于是分子生物学领域的顶级书籍, 不仅仅是介绍了分子生物学现象, 更重要的是其给出的high-level insight.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-09-03T03:01:24.000Z">
+<meta property="article:modified_time" content="2023-06-10T05:55:39.584Z">
+<meta property="article:author" content="Molaison">
+<meta property="article:tag" content="biology">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018082037.png"><link rel="canonical" href="https://github.com/Molaison/Molaison.github.io/2022/09/03/GENEXII%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'GENEXII学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-10 13:55:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018081403.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Molaison's blogs</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">GENEXII学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-03T03:01:24.000Z" title="发表于 2022-09-03 11:01:24">2022-09-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-10T05:55:39.584Z" title="更新于 2023-06-10 13:55:39">2023-06-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/basic-knowledge/">basic knowledge</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">14k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>43分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="GENEXII学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h3 id="The-First-Section-Gene-is-DNA-that-encodes-RNA-and-polypeptides"><a href="#The-First-Section-Gene-is-DNA-that-encodes-RNA-and-polypeptides" class="headerlink" title="The First Section: Gene is DNA that encodes RNA and polypeptides"></a>The First Section: Gene is DNA that encodes RNA and polypeptides</h3><h4 id="Terminology"><a href="#Terminology" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>Genome/基因组: 脱氧核糖核酸(deoxyribonucleic acid,DNA)链提供了有机体，以及它的每一个细胞所携带的全部遗传信息。它包括染色体DNA、质粒DNA,以及(真核细胞中)存在于线粒体和叶绿体的细胞器DNA。</li>
+<li>protein—coding gene、结构基因(structural gene)：编码的RNA依次编码多肽。</li>
+<li>gene locus: 每一条染色体由线性排列的基因组成，每个基因位于染色体的特殊位点上。</li>
+<li>allele : 基因座上所发现的不同形式。</li>
+<li>linkaage : 一条染色体上的等位基因表现出连锁遗传。</li>
+<li>transfection: 转染，指纯化的DNA加入到动物细胞中产生特殊的蛋白质。</li>
+<li>nucleotide：在C-5与磷酸基团相连的核苷称为核苷酸。</li>
+<li>supercoiling : DNA双螺旋结构自身相互缠绕从而改变DNA分子空间构象。同向扭转(顺时针)正超(positive),反之负超。</li>
+<li>lingking number(L) : DNA一条链绕另一条链的环绕圈数。不同L的NDA分子称为拓扑异构体。<ul>
+<li>writhing number(W) : DNA双链的轴所绕圈数，无量化值，W=0则为松散分子。</li>
+<li>twisting number(T) : 一条链相对于另外一条的旋转情况。由每圈多少个碱基决定。</li>
+<li>L~0~为松散状态L, L/L~0~可视为超螺旋密度。</li>
+</ul>
+</li>
+<li>bent DNA:一条链上出现8~10个连续腺嘌呤(A)导致双螺旋弯曲。</li>
+<li>melting temperature: 使DNA双链分开的温度范围的中点。</li>
+<li>hybrization : 两条不同来源的互补核酸序列退火形成双链结构。<ul>
+<li>滤膜上吸附有变性DNA，置于含有其他变性DNA的溶液中，即可检测是否含有互补序列。检测紫外吸收峰值测定杂交程度或是通过放射性强度决定。</li>
+</ul>
+</li>
+<li>mutation rate: 贯穿全基因组的突变(突变率以每个基因组每代发生多少来表示)：基因内的突变(突变率以每个基因座每代发生多少来表示)：特殊核苷酸位点的突变(突变率以每个碱基每代发生多少来表示)。</li>
+<li>transposable element: 具有可从一个位置移动到另一个位置的DNA序列。这一插入往往导致基因活性消失造成移码突变(frameshift mutation)。<ul>
+<li>插入发生时往往会删除部分或者全部插入序列，邻近区域也可能被删除。</li>
+</ul>
+</li>
+<li>forward mutation:正向突变，使基因失活的突变。相对应的是back mutation，回复突变。<ul>
+<li>true reversion:真实回复。原始突变的严格逆转。</li>
+<li>second-site reversion:第二位点回复。第二次突变弥补了第一次的功能。</li>
+<li>suppression mutation: 一个基因座上的突变能够抑制另一个的突变效应。该locus称为抑制基因(suppressor)<ul>
+<li>点突变可能导致多肽的氨基酸替换，而tRNA基因上的一种突变使得它能识别突变的密码子，那么在翻译中就会插入原来的氨基酸残基(请注意：这抑制了原来的突变，但在其他mRNA的翻译中会引入错误)。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cistron: 处于顺式构型或是反式构型的基因是指两个突变是否在同一条链上。</li>
+<li>null mutation: 基因功能被完全消除。<ul>
+<li>loss-of-function mutation: 阻止基因功能的突变。</li>
+<li>leaky mutation: 突变不完全消除蛋白质活性，保留一定活性。</li>
+<li>silent mutation: 无明显效应的突变。</li>
+<li>synonymous mutation: 碱基改变但是氨基酸残基不变。</li>
+<li>neutral substitution: 碱基改变，氨基酸残基也改变，但多肽活性不变。 </li>
+<li>中性突变(neutralmutation) : 它对有机体表型没有影响。<ul>
+<li>一些中性突变是同义突变，但不是所有的同义突变都是中性的。具体运送特定氨基酸的单一RNA的浓度是不同的，一些同义tRNA(不同tRNA携带一样的氨基酸)比其他的丰富，一些特殊密码子可能缺少足够的tRNA；</li>
+</ul>
+</li>
+<li>frameshift mutation移码突变：吖啶acridine引起，引进或者缺失一个碱基。(-)和(+)两种，分别表示缺失与增加。同时(+)(-)和(-)(+)两种方式可相互抑制，一个称为另一个的移码抑制基因(frameshift suppressor)。<ul>
+<li>当构建三突变体时，只有(+++)和(—-)表现野生型表型，而其他组合都是突变型。</li>
+</ul>
+</li>
+<li>错义突变(missense mutation): 产生编码不同氨基酸的密码子;</li>
+<li>无义突变(nonsense mutation): 产生终止密码子。</li>
+</ul>
+</li>
+<li>reading frame:阅读框，如果遗传密码是不重叠的三联体，根据起始位点的不同，那么会有3种可能的方式将核苷酸翻译成蛋白质。<ul>
+<li>一个由能翻译成氨基酸的三联体构成的阅读框称为可读框(open reading frame,ORF)。</li>
+<li>多肽序列有一个特殊的起始密码子(initiation codon)(AUG),从此延伸出一系列代表氨基酸的三联体，直到遇到3种类型的终止密码子(termination codon)(UAA、UAG或UGA)中的一个时才结束翻译。</li>
+<li>如果终止密码子频繁出现，就会阻止<strong>阅读框被翻译成蛋白质</strong>，我们称之为关闭(closed)或阻断(blocked):如果一个序列的3个<strong>阅读框全部被阻断</strong>，那么它就<strong>失去编码蛋白质的功能</strong>。</li>
+<li>在3种可能的阅读框中，只有一种阅读框是可翻译的，而其他两种会<strong>受到频繁的终止信号的阻断</strong>。</li>
+</ul>
+</li>
+<li>colinear: 基因与蛋白质是否共线性。核苷酸序列与蛋白质中氨基酸序列是否恰好一致。如果一个多肽含有N个氨基酸残基，那么编码这一多肽的基因就包含3N个核苷酸残基。</li>
+<li>gene expression : 用来自基因中的信息合成RNA或多肽的过程称为基因表达。<ul>
+<li>mRNA还包括两边的附加序列，这些序列不编码蛋白质</li>
+<li>5’端的非翻译区称为前导区(<strong>leader</strong>)或5’非翻译区(5’untraslatedregion,5’UTR).</li>
+<li>3’端的非翻译区称为非翻译尾区(<strong>trailer</strong>)或3’非翻译区(3’untraslated region,3’UTR).</li>
+</ul>
+</li>
+<li>cis-acting: 顺式作用。DNA序列包含两个部分，控制位点和编码区，<strong>控制位点的缺陷</strong>仅仅影响与其相连的编码区，而这不影响其他等位基因的表达能力，这种仅影响邻近DNA序列表达的性质称为顺式作用(cis-acting)。</li>
+<li>trans-acting:反式作用，<strong>调节物突变</strong>。如果突变能发挥反式作用，我们就认为其作用是通过产生可扩散分子(通常是蛋白质或调节性RNA)进行的，它可作用于细胞内多个靶标；</li>
+</ul>
+<h4 id="Key-concepts"><a href="#Key-concepts" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li>碱基配对互补：<ul>
+<li><strong>一条单链分子</strong>中<strong>两段互补序列</strong>通过碱基配对可以形成分子内的双链体。</li>
+<li><strong>一条单链分子</strong>可以和<strong>另一条独立、互补的单链分子</strong>进行碱基配对，形成分子间的双链体。</li>
+</ul>
+</li>
+<li>突变(自发或诱发)只需要在单链形成即可。<ul>
+<li><img src="https://fastly.jsdelivr.net/gh/Molaison/IMages/IMG/image-2022090210582811888.png" alt="image-20220902105828888"></li>
+</ul>
+</li>
+<li>突变热点的出现是多个突变事件在一个位点发生的结果。<ul>
+<li>热点的存在是因为<strong>胞嘧啶</strong>发生了高频率的自发脱氨基，从而产生<strong>尿嘧啶</strong>，而<strong>甲基化的胞嘧啶</strong>脱氨基则产生<strong>胸腺嘧啶</strong>!</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/0520221005165031.png" alt="image-20220902120602343"></li>
+<li>由于U不存在于DNA中，故而胞嘧啶脱氨基能够很快被识别。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points"><a href="#Inexplicable-points" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><ul>
+<li>为什么处于解链温度DNA双链体是稳定的?(comes from GENE XII P16)</li>
+</ul>
+<h3 id="Interrupted-gene"><a href="#Interrupted-gene" class="headerlink" title="Interrupted gene"></a>Interrupted gene</h3><h4 id="Terminology-1"><a href="#Terminology-1" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>interrupted gene: 断裂基因，编码区和非编码区互相间隔开但又连续镶嵌而成<ul>
+<li>外显子(exon)的序列包含在成熟RNA中，精确地说，一个成熟转录物(maturetranscript)起始于一个外显子的5’端，终止于另一个外显子的3’端。</li>
+<li>内含子(intron)是插入序列，在初始转录物加工成成熟RNA时被除去。</li>
+<li>反式剪切：不同mRNA的序列连接到一起</li>
+</ul>
+</li>
+<li>First parity rule: 即碱基配对原则<ul>
+<li>second parity rule: 在双链的每条单链中AT，CG几乎相等，也即碱基对不是偏向某一条链，而是相对均匀的散落在两条链中；<strong>更多地适用于内含子；</strong></li>
+<li>cluster rule : DNA中嘌呤和嘧啶往往分别聚集在一起，AG，CT，<strong>更多适用于外显子；</strong></li>
+<li>GC rule: 一个基因组中，GC的含量的总体比例具有物种特异性；在基因组内，单一基因往往具有独特的值；<ul>
+<li>外显子GC含量高于内含子</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>negative selection: 也称纯化选择(purifying selection), 外显子序列是保守的，因为如果序列改变(不再保守)，就会导致表型的改变，这种改变会使物种难以生存和很难产生可繁殖的后代。</li>
+<li>overlapping gene: 同一DNA序列编码两种非同源蛋白，使用了一次以上的阅读框。</li>
+<li>nested gene: 一个基因被发现存在于另一个基因的大的、类似于“宿主”的内含子中<ul>
+<li>重叠基因往往存在于“宿主”基因的另一条链上。</li>
+</ul>
+</li>
+<li>alternative splicing: mRNA前体以多种方式将exon连接在一起的过程;</li>
+<li>in series gene: equal to no allele;</li>
+<li>gene family : 为一组源自基因复制事件的、编码相关或相同多肽的基因。在第一次复制事件后，两份拷贝完全一致，随后，当不同突变在序列上累积后，它们就开始趋异。</li>
+<li>superfamily: 当我们发现基因相距较远，但还是认为它们具有共同的祖先, 称该组基因为超家族；</li>
+<li>orthologous gene : 也称ortholog, 是物种进化后所形成的同源基因(homologous gene,homolog),换句话说，它们是不同物种的<strong>相关基因。</strong></li>
+<li></li>
+</ul>
+<h4 id="Key-concepts-1"><a href="#Key-concepts-1" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li>只有外显子中的突变才会影响多肽链序列；但内含子中的突变会影响RNA的加工，从而可能影响序列和(或)多肽的产生。</li>
+<li>DNA碱基组成的4条规则是：第一均等规则、第二均等规则、成簇规则和GC规则。<ul>
+<li>我们能根据第一条之外的所有规则来区分外显子和内含子。</li>
+<li>第二均等规则提示，来自双链体DNA、固定的茎-环区段的外突在内含子出现得更多。</li>
+</ul>
+</li>
+<li>不同生物间内含子的位置通常是保守的，但是相应的内含子的长度变化可以很大。<ul>
+<li>比较不同物种的相关基因发现，相应的外显子序列通常是保守的，而内含子序列的<strong>相似性则低得多</strong>。因为<strong>缺乏使用有用序列去产生多肽，所以没有选择压力</strong>，这样内含子比外显子进化要快得多。</li>
+<li>相关性：编码序列和邻近外显子的内含子区域保持了相似性；而在更长的内含子与非编码序列两侧的区域则存在着很大的趋异。</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220907112657272.png" alt=""></li>
+</ul>
+</li>
+<li>处于正选择下，相对于无突变的其他基因，碰巧产生有利突变的单一基因存活下来；<ul>
+<li>此时外显子进化要比内含子快；</li>
+<li>内含子保守：<ul>
+<li>RNA剪接所需的内含子序列，如5’和3’剪接位点，以及分支位点是保守的；</li>
+<li>碱基顺序也被进化以适应于增进这个区域中双链体DNA外突茎-环结构的潜能(折叠潜能)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>外显子通常短小，典型的外显子编码小于100个氨基酸。一个基因的总长度主要由它的内含子所决定。</li>
+<li>抗体特异性的产生：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27467842">抗体结构 - 知乎 (zhihu.com)</a> 中关于超变区的描述;</li>
+</ul>
+<h4 id="Inexplicable-points-1"><a href="#Inexplicable-points-1" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><ul>
+<li>pressure 具体指什么？为什么把它说成信息？<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-202209091425465321.png" alt="image-20220909142546532"><ul>
+<li>选择压，就是自然选择淘汰一些表型的基因</li>
+</ul>
+</li>
+</ul>
+<h3 id="Overview-of-Genome"><a href="#Overview-of-Genome" class="headerlink" title="Overview of Genome"></a>Overview of Genome</h3><h4 id="Terminology-2"><a href="#Terminology-2" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>genome: 有机体的一整组完全地的基因，最终由DNA的全序列决定。</li>
+<li>transcriptome: 在特定条件下表达的一组完整的基因，根据细胞中所存在的这一组RNA分子来决定</li>
+<li>proteome: 一组完整的多肽，它可由全基因组编码，或者在某一种细胞或组织中产生。</li>
+<li>interactome: 相互作用组，蛋白质可以独立地或者作为多蛋白组装物或多分子复合体的一部分而起作用，如全酶或代谢途径中这些酶簇拥在一起。如果我们能够鉴定出所有的蛋白质与蛋白质之间的相互作用，那么我们就能够确定独立的蛋白质组合体的数目。</li>
+<li>reassociation kinetics: 真核生物基因组的总体特征可以通过变性DNA的复性动力学(reassociation kinetics)来估计。<ul>
+<li>非重复DNA(nonrepetitive DNA)由单一序列组成，在单倍体基因组中只有一份拷贝。</li>
+<li>重复DNA(repetitive DNA)是在每一单倍体基因组中含有两份以上的拷贝。重复DNA经常被分为两种类型。<ul>
+<li>中度重复DNA(moderately repetitive DNA)由相对较短的序列组成，在基因组中，其重复次数一般在10~1000次。<ul>
+<li>这些序列遍布整个基因组，并负责<strong>前mRNA剪接时二级结构的形成</strong>，此时<strong>内含子中的反向重复配对形成双链体区域</strong>。编码tRNA和rRNA的基因也是中等重复的。</li>
+</ul>
+</li>
+<li>高度重复DNA(highly repetitive DNA)由基因组中非常短的序列(一般小于100bp)组成，重复次数达几千次，一般组成长的串联重复。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Linkage map: 根据基因座之间的重组率来确定距离;</li>
+<li>restriction map:通过限制性内切核酸酶把DNA切成片段, 再测量切割位点的碱基对距离(电泳迁移)</li>
+<li>genetic polymerphism: 一个基因座上存在多个等位基因;</li>
+<li>transposon:转座子。有相当大一部分的<strong>中度重复DNA</strong>是由转座子(transposon)组成的，它们的序列比较短小(最多约5kb),能够<strong>移位到基因组中新的位置</strong>，或者进行<strong>自我拷贝</strong>。</li>
+<li>synteny : 同线性，不同物种基因组在局部范围内，总体上基因的排列顺序是相同的：当成对的人类和小鼠染色体同源区域进行比较时，位于对应位置的基因通常是同源的。</li>
+<li>expressed sequence tag: EST就是转录序列的一小部分，它通常来自于gcoreA文库中的克隆片段的一端或双末端测序。EST能证明一个所怀疑的基因确实是转录的，或有助于鉴定影响特殊疾病的基因。</li>
+</ul>
+<h4 id="Key-Concepts"><a href="#Key-Concepts" class="headerlink" title="Key Concepts"></a>Key Concepts</h4><ul>
+<li>蛋白质编码的基因的最大数目：<ul>
+<li>根据可读框来确定</li>
+<li>根据转录物组(通过直接确定所有的mRNA)或蛋白质组(通过直接确定所有的蛋白质)来直接定义基因的数目，这种方法能保证我们处理的是真实基因，即它们是在已知环境下所表达的基因。    </li>
+</ul>
+</li>
+<li>非重复DNA随着全基因组的增大趋向于更长。故基因组中的非重复DNA组分与有机体的相对复杂性有较好的相关性。<ul>
+<li>多肽一般是由非重复DNA编码的。</li>
+<li>在同一个分类群中，较大基因组并不一定含有更多基因，但包含有较多的重复DNA。</li>
+<li>大部分重复DNA是由转座子组成。</li>
+</ul>
+</li>
+<li>细胞器基因组:<ul>
+<li>通常为环状DNA分子; 线粒体DNA — mtDNA, 叶绿体DNA — ctDNA or cpDNA;</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points-2"><a href="#Inexplicable-points-2" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><h3 id="Genome-sequence-and-evolution"><a href="#Genome-sequence-and-evolution" class="headerlink" title="Genome sequence and evolution"></a>Genome sequence and evolution</h3><h4 id="Terminology-3"><a href="#Terminology-3" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>tandem repeat :串联重复序列，<strong>以相对恒定的短序列为重复单位，首尾相接， 串联连接形成的重复序列</strong>，又称卫星DNA (satellite DNA)。</li>
+<li>abundance:在每一个细胞中，每一种mRNA的平均数量被称为这个分子的丰度(abundance)。</li>
+<li>scarce mRNA: 也称complex mRNA, 占总量约一半的mRNA组成了大部分不同的序列，约为上万种，每一种mRNA成分的量都不是很多，通常少于10份拷贝。稀有mRNA的表达是广泛重叠的。</li>
+<li>constitutive gene: 约10%的mRNA序列在这个细胞中是独特的，大部分表达序列在许多、有时甚至所有细胞类型中都是相同的。这些基因是所有细胞类型所必须的。<ul>
+<li>luxury gene: 特定细胞类型必需并只在其中表达的基因(如卵清蛋白或珠蛋白)</li>
+</ul>
+</li>
+<li>microarray: 含有微陈列(microarray)的芯片，这些陈列包含一排排的、高密度的微量DNA寡核苷酸样品。这种装置是<strong>建立在全基因组序列已知的基础之上。</strong>在酵母的6181个ORF中，当我们对每一条进行分析时，我们将20条25-寡核苷酸(25-mer,它与mRNA是完全匹配的)和20条不完全匹配的<strong>等长</strong>的寡核苷酸(它们只在一个碱基位置上是不同的)用来代表同一个ORF,从完全匹配的模式中所得到的信号减去不匹配的信号，就能计算出每个基因的表达水平。<ul>
+<li>这一技术非常敏感；</li>
+<li>不完全匹配的寡核苷酸目的是检测突变；</li>
+</ul>
+</li>
+<li>transversion mutation: 从嘧啶到嘌呤或者从嘌呤到嘧啶；</li>
+<li>transition mutation：从嘌呤到嘌呤，嘧啶到嘧啶；</li>
+<li>genetic drift: 群体中突变变异体频率的随机变化称为遗传漂变(genetic drift)这是某一种基因型的“抽样误差(sampling error)”<ul>
+<li>可能一群特殊类型亲本的子代基因型不完全匹配孟德尔遗传定律所预测的数值;</li>
+<li>在非常大的群体中，遗传漂变的随机效应往往被平均化了，所以每一种变异体的频率几乎不存在改变；</li>
+<li>然而在小群体中，这些随机变化将会非常显著，遗传漂变对群体的遗传变异会产生显著的效应。</li>
+</ul>
+</li>
+<li>genetic hitchhiking : 核苷酸序列以一定速率中性进化，在特定核苷酸中以这种速率进行的变异会影响杂合性(heterozygosity)(在某一基因座的杂合子的比例)。如果变异体序列是有利的，那么这个位点将显示核苷酸杂合性的降低，而变异体在频率上会增加，并最终固定于群体中;</li>
+<li>divergence: 趋异度, 两基因的差异。可通过在每一个位点上获取最常见碱基，就可计算一个家族的祖先共有序列。每个现存成员的趋异度用它与祖先序列的差异碱基比例来计算；</li>
+<li>unit evolutionary period: 单位进化时期，产生1%的趋异度所需的时间；百万年为单位；</li>
+<li>C-value: 活体生物基因组的DNA总量；</li>
+<li>C-value paradox: 基因组大小与遗传形态复杂性之间缺乏必然联系;</li>
+<li>CpG岛：p指的是磷酸二酯键，不是pair!!<ul>
+<li>哺乳动物的基因组里，CpG序列只占1%。其中70%-80%的CpG是零散分布的，但有一部分CpG会聚集成团，就像岛屿一样散布于基因的海洋里，因此得名CpG岛。CpG岛内的CpG可占据总序列长度的60%以上。</li>
+<li>70%左右的功能基因的起始部位都有CpG岛存在；</li>
+<li>游离的CpG序列总是处于甲基化状态，而聚成岛屿的CpG通常是没有甲基化的。甲基化后的CpG岛就无法结合转录因子(DNA链上伸出来的甲基就像刺刀一样阻止转录因子的靠近)</li>
+</ul>
+</li>
+<li>nonallelic gene: 两个(或两个以上)相同基因存在于同一染色体上，这称为非等位基因;</li>
+<li><p>功能基因: 即protein-coding gene, 那些首先被转录成RNA,而后被翻译为多肽的基因。</p>
+<ul>
+<li>无功能基因指不能编码相应蛋白质的基因，它们被称为假基因，其失活的原因有多种，可能是转录或翻译的缺陷（或两者均有）所致。</li>
+<li>它们不能产生携带原有功能的多肽产物; </li>
+<li>它们可以是非功能性的，或产生了变异的功能，以及可具有调节功能的RNA产物。</li>
+</ul>
+</li>
+<li><p>processed pseudogene: 来自成熟mRNA转录物反转录而成的gcoreA拷贝，并被整合入基因组中；</p>
+<ul>
+<li>当活性反转录酶存在于细胞中，如在活性反转录病毒感染时或反转座子具有活性时，这种事件可能会发生。或转录物进行过加工，其结果是已加工的假基因通常缺乏正常表达所需的调节区，故而失活。</li>
+</ul>
+</li>
+<li><p>nonprocessed pseudogene ：来自多重拷贝或单一拷贝基因的其中一份拷贝的失活突变，或一个活性基因的不完全重复。</p>
+<ul>
+<li>如果一个基因整体重复，包括调节区，那么此时即存在两个活性基因的拷贝，而一份拷贝上的失活突变不易受到负选择的影响。从而产生未加工的假基因；</li>
+<li>一个活性基因的不完全重复，产生失去了调节区和（或）编码序列的拷贝，将会是“到达即死”形式，即它马上会形成假基因。</li>
+</ul>
+</li>
+<li>霍利迪连接体：<a target="_blank" rel="noopener" href="https://upload.wikimedia.org/wikipedia/commons/8/8e/Неподвижная_структура_Холлидея_(англ.">https://upload.wikimedia.org/wikipedia/commons/8/8e/Неподвижная<em>структура</em>Холлидея_%28англ.%29.svg</a>.svg)</li>
+</ul>
+<h4 id="Key-concepts-2"><a href="#Key-concepts-2" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li>支原体基因组大小0.6*10^6^，人类3.3*10^9^，植物的更大；</li>
+<li>原核生物85%-90%的序列都编码RNA或者多肽。<ul>
+<li>基因组小于1.5Mb的原核生物必定都是细胞内寄生的。也由此鉴定出一个细胞所需的最少基因数，约为1500个；</li>
+<li>酵母中有6000个基因；线虫有21700个基因；果蝇有17000个基因；小型植物拟南芥有25000个基因；哺乳动物中的基因数可能有20000~25000个基因。</li>
+</ul>
+</li>
+<li>人类基因组中只有1%由外显子组成。<ul>
+<li>外显子只占每个基因DNA序列的约5%，因此基因组中只有约25%的序列是来自基因的外显子加内含子。</li>
+<li>人类基因组约有20000个基因。</li>
+<li>约60%的人类基因是可变剪接的。多达80%的可变剪接改变了蛋白质序列，因此蛋白质组约由50000~60000种蛋白质成员组成。</li>
+</ul>
+</li>
+<li>重复序列占据了人类基因组的50%以上, 主要分为5类<ul>
+<li>转座子(transposon)(活性或非活性的)占了重复序列的绝大部分(基因组的45%)。所有转座子都是多拷贝的。<ul>
+<li>转座子具有自我复制和插入到新位点的能力。它们也许只以DNA元件的形式在起作用，或者部分以RNA这种活性方式在起作用</li>
+<li>一些现存的基因来源于转座子，在失去转座能力后进化成它们现在的状态</li>
+</ul>
+</li>
+<li>已加工的假基因(总共约3000个，约占总DNA的0.1%。这些序列是mRNA的反转录DNA拷贝插入到基因组而形成的)。</li>
+<li>简单重复(高度重复的DNA如CA重复)占基因组的约3%。</li>
+<li>区段重复(长度为10~300kb的区段模块在新的区域被重复)占了基因组的约5%。这种重复序列只有一小部分位于相同染色体上，换句话说，大部分重复区段位于不同染色体上。</li>
+<li>串联重复形成了一种类型的序列模块(特别是在着丝粒和端粒处)。</li>
+</ul>
+</li>
+<li>当两个或更多的基因存在冗余时，在其中一个基因上进行突变也许不会检测到效应。</li>
+<li>在任何给定的细胞中，大部分基因是低水平表达的。<ul>
+<li>只有一小部分基因的产物是细胞类型所特有的，所以是高水平表达的。</li>
+</ul>
+</li>
+<li>当复制错误，或化学品对核苷酸的改变损害了DNA,或当电磁辐射打断或形成化学键时，而在下一次复制事件中这些损伤没有修复，那么<strong>突变就会发生</strong>。</li>
+<li>转换transition mutation发生的频率是颠换transversion mutation的两倍; 原因<strong>可能</strong>如下:<ul>
+<li>自发转换错误比自发颠换发生得更加频繁;</li>
+<li>颠换错误更加容易被检测到，并被DNA修复机制校对;</li>
+</ul>
+</li>
+<li>在种间同源基因中，通过计数同义(K~s~)和非同义(K~a~)氨基酸替换，以及计算KK的比值就可研究基因的进化历史。<ul>
+<li>K~a~/K~s~=1说明这些基因呈中性进化，其氨基酸变化不偏向任何一方;</li>
+<li>K~a~/K~s~&lt;1提示负选择，此时氨基酸替换是不利的，因为它影响了多肽活性，这样就存在自然选择压力，要在那个位置保留原来功能的氨基酸序列以维持适当的蛋白质功能。</li>
+<li>当K~a~/K~s~&gt;1时就会发生正选择。这提示氨基酸改变是有利的，可能在群体中保留下来。</li>
+<li>正的K~a~/K~s~值可能是很少的，部分原因是在一长串的序列中，其平均值必须超过1。如果某基因中的单一替换正在被<strong>正选择</strong>，而两侧区域处于<strong>负选择</strong>，那么，横跨序列的平均比值实际上是负的。</li>
+</ul>
+</li>
+<li>降低DNA序列多态性的因素：负选择，遗传漂变(drift)，遗传搭车(hitchhiking)；</li>
+<li>在RNA世界，由核酸介导的许多功能在基因组空间内相互竞争。可以看成压力pressure;<ul>
+<li>AG压力(外显子中嘌岭富集区的压力)</li>
+<li>GC压力[全基因组范围内的、两组沃森-克里克(Watson-Crick)配对碱基之间、独特平衡的压力]</li>
+<li>单链均等压力(全基因组范围内、在单链核酸中A和T碱基之间及G和C碱基之间的压力)</li>
+<li>可能它也与后者相关，即折叠压力(全基因组范围内单链核酸的压力，不管它是以游离形式或从双链体中外突的形式获得二级或更高级茎·环结构)。</li>
+</ul>
+</li>
+<li>基因组大小与遗传复杂性之间没有必然联系。</li>
+<li>生物体越复杂，它所需要的最小基因组也越大。</li>
+<li>许多在分类上属于一个分类阶元的生物，它们的基因组大小却变化很大。</li>
+<li>重复基因可以趋异而产生不同的基因，或其一份拷贝可能会变成失活假基因。重复基因产生差异可能有以下情况：<ul>
+<li>case 1 : 两个基因都将变成有机体所需的。<ul>
+<li>两个基因编码的蛋白质产生了不同的功能</li>
+<li>它们在不同时间或不同细胞类型中表达。</li>
+</ul>
+</li>
+<li>case 2 : 如果上个事件不发生，那么其中一个基因很可能会变成假基因;<ul>
+<li>因为如果它获得了有害突变后，由于缺乏纯化选择使它消亡，所以由于随机的遗传漂变，出现突变体的频率可能提高，并固定在某一物种中。</li>
+<li>在小群体中，遗传漂变是一种更大的力量。在这样一种情况下，两份拷贝中哪一份失活往往是一个随机事件(如果不同拷贝在不同群体中失活，那么这可能造成不同个体之间的不相容性，或最终引起种间差异)。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>当被导入到基因组时，转座因子往往增加拷贝数，但它处于负选择和转座调节机制的检测之中。</li>
+<li><p>突变偏爱性可能引起有机体基因组的高A·T含量：</p>
+<ul>
+<li><p>从胞嘧啶到尿嘧啶，或从5-甲基胞嘧啶到胸腺嘧啶的自发脱氨基作用是常见的突变来源，这促进了从G·C到T·A的转换突变。</p>
+<ul>
+<li>DNA中的尿嘧啶比胸腺嘧啶更易于修复；</li>
+<li>甲基化胞嘧啶(常见于C·G二联体)不仅是突变热点，而且特别偏向于产生T·A对。</li>
+</ul>
+</li>
+<li><p>鸟嘌呤氧化成8-氧鸟嘌呤能导致从C·G到A·T的颠换，因为8-氧鸟嘌呤与腺嘌呤配对比与胞嘧啶配对更加稳定。</p>
+</li>
+</ul>
+</li>
+<li>基因转变偏爱性往往增高G·C含量，可能引起部分对抗突变偏爱性。<ul>
+<li>在<strong>重组</strong>或双链断裂修复过程中，会产生<strong>霍利迪连接体</strong>，它能形成含有非匹配碱基对的异源双链DNA,而它会以突变链为模板进行修复，这样就产生了基因转变；</li>
+</ul>
+</li>
+<li>高重组活性的染色体区域显示了偏向G·C的更多突变，而低重组活性的染色体区域往往显示为A·T富集区。</li>
+<li>密码子偏爱可能源自偏好特殊序列的适应性机制或基因转变偏爱性。<ul>
+<li>解释1：一种特定密码子在募集某种丰富的RNA时可能更有效率，如翻译速率或准确度比使用其他密码子更高。<em>**</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points-3"><a href="#Inexplicable-points-3" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220911094055152.png" alt="image-20220911094055152"><ul>
+<li>为什么要设置不完全匹配的挂核苷酸序列？不会导致误匹配吗？<ul>
+<li>预测基因突变</li>
+<li>不会，24个都匹配的话误匹配概率低；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220917162442097.png" alt="image-20220917162442097"><ul>
+<li>是说这个有害突变不致死，或者相对不那么有害吗？</li>
+</ul>
+</li>
+</ul>
+<h3 id="成簇与重复-看不懂，先跳过"><a href="#成簇与重复-看不懂，先跳过" class="headerlink" title="成簇与重复(看不懂，先跳过)"></a>成簇与重复(看不懂，先跳过)</h3><h4 id="Terminology-4"><a href="#Terminology-4" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>cluster ：通过某一<strong>祖先基因</strong>的重复(duplication)和变异(variation)而传递下来的一组基因称为一个基因家族(gene family), 它的成员可以成簇(cluster)排列在一起或散布在不同染色体上（或兼而有之）。</li>
+<li>tandem duplication: 一些序列发生了拷贝的同时仍在一起；</li>
+<li>translocation: 将DNA片段从一条染色体转移到另一条染色体上；</li>
+<li>unequal crossing over: 也称nonreciprocal recombination, 出现在<strong>相似或者一样</strong>的两个位点之间的重组事件，但是这一重组并不对称，导致一条染色体上的重复拷贝转移到了另一条上；<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220918205231345.png" alt="image-20220918205231345"></li>
+</ul>
+</li>
+</ul>
+<h4 id="Key-points"><a href="#Key-points" class="headerlink" title="Key points"></a>Key points</h4><ul>
+<li>核糖体RNA(rRNA)是由大量完全相同的基因编码的，这些基因串联重复形成一个或多个基因簇;</li>
+<li>每一个核糖体DNA(rDNA)簇的组成都是有规律的，转录单位和非转录间隔区交互排列，而每个转录单位主要由rRNA和连接前体组成。<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-202209182109276710.png" alt="image-20220918210927670"></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points-4"><a href="#Inexplicable-points-4" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><ul>
+<li>同源重组的机理是什么?<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/2620221026102047.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="Chromosome"><a href="#Chromosome" class="headerlink" title="Chromosome"></a>Chromosome</h3><h4 id="Terminology-5"><a href="#Terminology-5" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>包装率(packing ratio): 即DNA的长度除以包装后的长度。</li>
+<li>nucleoid-associated protein: NAP,类似于真核生物染色体蛋白；</li>
+</ul>
+<h4 id="Key-concepts-3"><a href="#Key-concepts-3" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li><p>病毒capsid包装：</p>
+<ul>
+<li><p>蛋白质外壳沿着核酸组装，在组装过程中利用蛋白质-核酸之间的相互作用来浓缩DNA或RNA。</p>
+<ul>
+<li>烟草花叶病毒TMV组装起始于RNA的两双链发夹结构，为成核中心；</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220919080922105.png" alt="image-20220919080922105"></li>
+<li>每加一层蛋白质亚基，就抓住一段RNA；</li>
+</ul>
+</li>
+<li><p>衣壳可以被组建成一个中空外壳，核酸在被装进去时，或者在进入的过程中被浓缩。多球状capsid；</p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220919081044456.png" alt="image-20220919081044456"></li>
+<li>λ噬菌体成熟过程中，capsid随DNA进入而改变；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>将DNA包装进入噬菌体头部包括两类反应：移位和凝聚，这两个过程从能量的角度上讲都是不利的。</p>
+<ul>
+<li>移位：进行滚环复制后产生长DNA，末端酶(terminase)对其cos site切割产生粘性末端，末端酶接着将其转移到capsid；<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220919082650076.png" alt="image-20220919082650076"></li>
+</ul>
+</li>
+<li><p>HU蛋白可非特异性地结合与多个位点，但对扭曲的DNA区域具有一定偏爱性；</p>
+</li>
+</ul>
+<h4 id="Inexplicable-points-5"><a href="#Inexplicable-points-5" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><h3 id="The-DNA-replication-related-to-Cell-circle"><a href="#The-DNA-replication-related-to-Cell-circle" class="headerlink" title="The DNA replication related to Cell circle"></a>The DNA replication related to Cell circle</h3><h4 id="Terminology-6"><a href="#Terminology-6" class="headerlink" title="Terminology"></a>Terminology</h4><h4 id="Key-concepts-4"><a href="#Key-concepts-4" class="headerlink" title="Key concepts:**"></a>Key concepts:<em>**</em></h4><ul>
+<li>细胞周期的起始：<ul>
+<li>假设1：起始子蛋白不断合成，达到一定浓度后，就出发其实反映；</li>
+<li>假设2：抑制蛋白随着细胞体积的增大浓度稀释到有效浓度以下；</li>
+</ul>
+</li>
+<li>细菌一次复制完成(分裂启动)前，另一个复制周期又开始了，从而造成多复制叉染色体(复制得到的子链又形成复制叉)；<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220921103546173.png" alt="image-20220921103546173"></li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h4 id="Inexplicable-points-6"><a href="#Inexplicable-points-6" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><h3 id="The-Transpooson-and-Retrovirus"><a href="#The-Transpooson-and-Retrovirus" class="headerlink" title="The Transpooson and Retrovirus"></a>The Transpooson and Retrovirus</h3><h4 id="Terminology-7"><a href="#Terminology-7" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>Insertion sequence: 插入序列，后加数字代表他们被分离的先后顺序。<ul>
+<li>细菌操纵子的自发插入物，其插入阻止了被插入基因的转录和（或）翻译。</li>
+<li>以末端反向重复序列结尾。两序列密切相关但并非<strong>完全一致</strong>；<ul>
+<li>这一区域的存在意味着不管朝哪一侧移动，都能遇到相同序列。</li>
+</ul>
+</li>
+<li>转座时，插入位点处宿主DNA被复制。<ul>
+<li>该靶序列为复制为同向重复(direct repeat)，分布于IS两侧；</li>
+<li>这一重复序列产生的原因是靶DNA的交错断裂产生粘性末端；<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220926091744110.png" alt="image-20220926091744110"></li>
+</ul>
+</li>
+<li>末端的顺式作用突变可以阻止转座，这一突变可被负责转座的蛋白，转座酶(transposase)所识别;</li>
+<li>含有单一长编码区，从一侧反向重复内侧到另一侧之前或其中，负责编码<strong>转座酶</strong>。</li>
+</ul>
+</li>
+<li>II类因子：或称DNA型因子。直接操作DNA，并在基因组内自我繁殖。</li>
+<li>I类因子：反转录因子。基于自身的RNA转录物制备出DNA拷贝，再整合进基因组中新位点。</li>
+<li>long terminal repeat(LTR) retrotransposon: 长末端重复反转录转座子，在总体结构和转座机制上，他们和反转录原病毒很相似。<ul>
+<li>也称retrotransposon；</li>
+</ul>
+</li>
+<li>retroposon：反转录子，同样利用反转录酶，但是没有LTR，有独特转座模式。称为非LTR反转录转座子。</li>
+<li>replicative transposition : 复制型转座, 转座子被重复，转座的实体是原来序列的拷贝；<ul>
+<li>转座酶：在原转座子的末端起作用；</li>
+<li>解离酶(resolvase)：对倍增拷贝起作用；</li>
+</ul>
+</li>
+<li>precise excision : 转座子发生重组后，细菌酶去掉转座子和重复序列的一份拷贝。<ul>
+<li>imprecise excision: 留下转座子的残余序列，阻止靶基因的重新激活；    <ul>
+<li>这一切除的频率高于准确切除；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>cointegrate : 共整合。复制性转座中出现的结构：<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220928102325564.png" alt="image-20220928102325564"></li>
+<li>链转移复合体的3’端作为复制的引物，产生一个称为共整合(cointegrate)的结构，它由两个原始分子融合而成。</li>
+<li>共整合结构含有转座子的<strong>两份拷贝</strong>，每一份拷贝位于两个原始复制子之间的一个连接处，为<strong>同向重复序列</strong>(不管从哪个方向都是同向)。而转座酶则可使之产生交换反应。它转变成共整合还需要宿主的复制功能。</li>
+<li>解离过程需要<strong>解离酶</strong>；</li>
+</ul>
+</li>
+<li>链转移复合体：也称交换复合体：<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220928102810568.png" alt="image-20220928102810568"></li>
+<li>交错末端的<strong>单链区</strong>，是拟复制叉(pseudoreplication fork);</li>
+</ul>
+</li>
+<li>自主转座子(autonomous transposon)具有切除和转座能力。</li>
+<li>非自主转座子(nonautonomous transposon)是稳定的；正常情况下，它们不转座或不允许其他的自发改变。只有在基因组内存在同一家族的自主转座子才能发生转座;</li>
+</ul>
+<h4 id="Key-concepts-5"><a href="#Key-concepts-5" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1577-z">Ten things you should know about transposable elements</a></li>
+<li>必须要RNA中间体参与的转座是真核生物独有的。<ul>
+<li>这一转座必须要运用某些形式的反转录酶。</li>
+</ul>
+</li>
+<li><p>转座基本反应:</p>
+<ul>
+<li>转座子的两末端通过酶切反应从供体DNA上分离出来，产生3’羟基(3OH)端。</li>
+<li>通过转移反应，暴露末端与靶DNA相连接，这个过程涉及转酯作用(transesterification),使3’-OH端直接攻击靶DNA。</li>
+<li>这些反应发生在一个<strong>核酸蛋白复合体</strong>内，该复合体包含必需的酶和转座子的<strong>两个末端</strong>。</li>
+<li>不同转座子的差别在于靶DNA被转座子识别的时间是否处于其自身被切割的之前或之后，以及转座子的两个末端中一条链或两条链是否在整合前被切割。</li>
+</ul>
+</li>
+<li><p>当转座子将其<strong>另一份拷贝</strong>插入原来位点附近的<strong>第二个位置时</strong>，可能会导致宿主DNA重排，宿主系统可能造成该转座子的两份拷贝之间发生交互重组，其结果取决于其重复序列是<strong>同向的</strong>还是<strong>反向的</strong>。</p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-202209128100649540.png" alt="image-20220928100649540"></li>
+<li>两份同向重复序列交互重组会把两者之间的序列切除(以环状DNA形式)，包括一份重复序列。</li>
+</ul>
+</li>
+<li><p>反向重复序列：两个重复序列之间的区域被倒位：重复序列自身还可进一步产生倒位。一个反向的复合转座子是基因组稳定的组件，尽管中心区的方向可能因重组而倒位。</p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220928101322228.png" alt="image-20220928101322228"></li>
+<li>两重复序列之间区域可能反向；</li>
+</ul>
+</li>
+<li><p>非复制转座的原理：链的断裂和重接</p>
+<ul>
+<li>靶序列通过插入转座子而重建，供体链仍处于断开状态，不形成共整合结构；</li>
+</ul>
+</li>
+<li><p>非复制转座：两种形式：</p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220928105604946.png" alt="image-20220928105604946"></li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220928105827342.png" alt="image-20220928105827342"></li>
+</ul>
+</li>
+<li><p>转座子切割过程：<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220928110834962.png" alt="image-20220928110834962"></p>
+<ol>
+<li>切开一条DNA链</li>
+<li>释放3-OH端攻击另一条链，切割位点5‘侧序列被释放</li>
+<li>转座子的两条链形成发夹结构</li>
+<li>激活的H~2~O分子攻击发夹结构</li>
+</ol>
+</li>
+<li>T10复合转座子:Tn10复合转座子的两条链依次被切断，接着转座子与已切断的靶位点连接起来;<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/11/1420221114110610.png" alt=""></li>
+</ul>
+</li>
+<li>T5转座子:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/11/1420221114110637.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points-7"><a href="#Inexplicable-points-7" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><h3 id="Prokaryote-transcription"><a href="#Prokaryote-transcription" class="headerlink" title="Prokaryote transcription"></a>Prokaryote transcription</h3><h4 id="Terminology-8"><a href="#Terminology-8" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>transcription unit: 从启动子到终止子的一段序列；<ul>
+<li>最先转录成RNA的第一个碱基对为转录起点；</li>
+<li>启动子5‘端序列为上游，3’端序列为下游；</li>
+</ul>
+</li>
+<li>transcription bubble：转录泡，RNA聚合酶将DNA分开，形成两条暂时的单链。<ul>
+<li>转录泡随着合成，逐渐迁移，其后的DNA重新形成双链；</li>
+</ul>
+</li>
+<li>unwinding point：解链点，RNA聚合酶在转录泡前端解开双链；<ul>
+<li>rewinding point: 再螺旋点，在泡的后端重新聚合；</li>
+</ul>
+</li>
+<li><p>abortive initiation: 流产起始，任何一个碱基插入后，聚合酶都有释放RNA链的可能性，导致流产起始(abortive initiation)产物的产生。</p>
+<ul>
+<li>在释放出流产起始产物后，聚合酶又从+1开始合成第一个碱基。</li>
+<li>流产起始的往复循环常常产生长度为几个碱基的寡核苷酸，有时可多达<strong>20nt</strong>,直到酶<strong>真正成功地离开启动子</strong>。</li>
+</ul>
+</li>
+<li><p>down mutation:大多数细菌启动子的突变可造成相关基因转录物的丢失或是大幅度减少；</p>
+<ul>
+<li>启动子突变使得转录水平增加的则为上调突变(up mutation);</li>
+</ul>
+</li>
+</ul>
+<h4 id="Key-concepts-6"><a href="#Key-concepts-6" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li>转录发生速度约为40-50bp/s，翻译速度大致相同,约为15 aa/s, 但比DNA复制速度慢得多，约为800bp/s。</li>
+<li>转录泡长度约为12-14bp，但是RNA-DNA杂合链长度只有8-9bp；<ul>
+<li>在转录的任一时刻，正在生长的RNA链上的最后约14个核苷酸与DNA和（或）酶以复合体的形式存在。</li>
+</ul>
+</li>
+<li>转录起始过程：<ul>
+<li>RNA聚合酶结合于启动子序列，DNA维持双链，形成closed complex；</li>
+<li>将DNA双链解开，形成open complex；</li>
+</ul>
+</li>
+<li>在细菌中，m/r/tRNA由单一的RNA聚合酶合成，在真核生物中则分别有I/II/III合成；</li>
+<li>细菌中RNA聚合酶各亚基的功能：<ul>
+<li>两α亚基：负责酶的装配，启动子识别，激活因子识别；</li>
+<li>ββ’亚基：催化中心；</li>
+<li>σ亚基：改变RNA聚合酶与DNA结合的特性，使得对普通DNA序列亲和性降低，对启动子亲和性增高；<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20220930100149146.png" alt="image-20220930100149146"></li>
+<li>核心酶对DNA有均等的亲和力，全酶中结合常数被降低为1/10^4^,与启动子结合常数为10^3^;</li>
+<li>σ亚基在聚合酶合成了近10nt时被释放；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>RNA寻找启动子序列方式：</p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20221003161739315.png" alt="image-20221003161739315"></li>
+<li><p>这一假设作用方式为：RNA聚合酶形成和破坏一系列闭合复合体，直至遇到启动子形成开放复合体；</p>
+<ul>
+<li>这一随机过程，收到速度常数的限制速度过慢，不符合实际，故有其他加速的方式；</li>
+</ul>
+</li>
+<li><p>第一，酶可能以一维随机步移的方式沿DNA迁移，这称为“滑动(sliding)”。</p>
+</li>
+<li>第二，在细菌拟核中存在染色体错综复杂的折叠形式，当酶结合于染色体的某一序列时，酶可能与其他位点靠得很近，这样降低了解离并与另一个位点重新结合的时间，这称为“区段内转移或跳跃(intersegment transfer or hopping)”。</li>
+<li>第三，当RNA聚合酶非特异性地结合于某一位点时，它能交换DNA位点直到启动子被发现，这称为“直接转移(direct transfer)”。</li>
+</ul>
+</li>
+<li><p>RNA聚合酶与DNA结合过程中出现的变化：</p>
+<ul>
+<li><p><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20221003162740257.png" alt="image-20221003162740257"></p>
+<ul>
+<li>注意-35区位置。</li>
+<li>三元复合体指RNA，DNA，聚合酶；</li>
+</ul>
+</li>
+<li><p>DNA出现约90°的弯曲，这使得模板能接近于聚合酶的活性位点；</p>
+</li>
+<li>在转录起点中，-11到+3之间的启动子DNA的链被打开；</li>
+<li>将启动子DNA挤入活性通道，形成转录泡；</li>
+<li>聚合酶的“颌”结构闭合以包围转录起始位点下游的启动子部分。这样，在开放复合体上的启动子接触面就可向外延伸，从-55到+20。</li>
+</ul>
+</li>
+<li><p>启动子复合体到延伸复合体的转变：</p>
+<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20221003163709292.png" alt="image-20221003163709292"></li>
+</ul>
+</li>
+<li><p>一个启动子是根据在特定位置存在的共有短序列来定义的。</p>
+<ul>
+<li>对于细菌来说，能够提供足够信号最小长度为12bp，这12bp可以不相邻；</li>
+<li>随着基因组长度增加，特异性识别所需最小长度也增加；</li>
+<li>如果碱基数恒定的短序列被<strong>某一特定数目的碱基对</strong>所隔开，它们若组合到一起，<strong>长度可短于12bp</strong>,因为所形成的碱基之间的距离本身也提供了部分信息（即使中间序列本身是不相关的）。</li>
+</ul>
+</li>
+<li><p>在大肠杆菌中，启动子序列缺乏广泛的序列保守性。</p>
+<ul>
+<li>有一些小段是保守的，只存在很短的共有序列是调节位点的典型特征；</li>
+</ul>
+</li>
+<li><p>细菌中，启动子最重要的两元件为两6bp元件，-10区和-35区；其次则为-10区，-35区上下游元件；<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/image-20221003165249112.png" alt="image-20221003165249112"></p>
+<ul>
+<li>-10区元件 ：别名Pribnow Box，TATA Box(该名称主要用于真核生物中的相似序列)；以-10bp处为中心；<ul>
+<li>$T<em>{80}A</em>{95}T<em>{45}A</em>{60}A<em>{50}T</em>{96}$, 下标为碱基出现最大频率，对应于其结合重要性；</li>
+<li>认为-10区<strong>中前端高度保守的TA</strong>和末尾一个<strong>几乎完全保守的T</strong>是启动子识别中最重要的碱基；</li>
+<li>在闭合复合体中为双链，在开放复合体为单链；</li>
+</ul>
+</li>
+<li>-35区元件：以-35处为中心；<ul>
+<li>在闭合和开放复合体中是相似的；</li>
+<li>$T<em>{82}T</em>{84}G<em>{78}A</em>{65}C<em>{54}A</em>{45}$;</li>
+</ul>
+</li>
+<li>间隔区序列：长度约为16-18bp；<ul>
+<li>真实序列不重要，但是距离很重要；</li>
+<li>因为DNA螺旋的本性是与生俱来的，所以它不仅决定了RNA聚合酶中<strong>相互作用的两个区域的恰当分开</strong>，而且还决定了<strong>两个位点彼此之间的空间定向</strong>。</li>
+</ul>
+</li>
+<li>转录起点：90%都为嘌呤，典型为腺嘌呤；<ul>
+<li>以CAT序列为中心？</li>
+</ul>
+</li>
+<li>extended -10 elements: 在启动子缺乏-35区但接近共有序列时，其TGN序列能够弥补这一弱匹配；</li>
+<li>discriminator：-10区下游，在-10与起点之间，能够识别σ因子；<ul>
+<li>大小为<strong>碱基对</strong>；</li>
+</ul>
+</li>
+<li>UP元件：-35区上游的10-20bp序列。与两个α亚基的CTD区域作用，在一些高表达的基因的序列中，它能够极大地增加转录；<ul>
+<li>只有当它与共有序列<strong>非常匹配</strong>时才将其称作<strong>UP元件</strong>；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上调突变大多是<strong>增大了-35区和-10区与共有序列的相似性</strong>，或使<strong>两个保守六联体之间的距离更接近17bp</strong>:<ul>
+<li>而下调突变大多<strong>降低了它们与共有序列的相似性</strong>，或是使间隔距离大于17bp,而且下调突变倾向于集中在有最高保守度的启动子位置上。</li>
+</ul>
+</li>
+<li>与共有序列(12 bp)完美匹配的启动子弱于存在至少一处错配的启动子，这是因为结合过于紧密影响了启动子逃逸；</li>
+<li></li>
+</ul>
+<h4 id="Inexplicable-points-8"><a href="#Inexplicable-points-8" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><h3 id="Karyote-transcription"><a href="#Karyote-transcription" class="headerlink" title="Karyote transcription"></a>Karyote transcription</h3><h4 id="Terminology-9"><a href="#Terminology-9" class="headerlink" title="Terminology"></a>Terminology</h4><ul>
+<li>转录因子: 转录起始过程必需的<strong>蛋白质</strong>中非RNA聚合酶成分的部分;<ul>
+<li>转录因子可以结合DNA,也可以识别别的因子,或者识别RNA聚合酶;  </li>
+</ul>
+</li>
+<li>核心启动子: 含有所有RNA聚合酶的结合与功能发挥必需的结合位点;</li>
+<li>双向启动子: 位于两个相邻且转录方向相反的基因之间的一段DNA序列</li>
+<li>TBP: TATA-binding protein, TATA结合蛋白. 三种RNA聚合酶<strong>起始转录</strong>的必需因子; </li>
+</ul>
+<h4 id="Key-concepts-7"><a href="#Key-concepts-7" class="headerlink" title="Key concepts"></a>Key concepts</h4><ul>
+<li>真核与原核生物转录的差别:<ul>
+<li>原核:发生在DNA模板上;真核:发生在染色质模板上;</li>
+<li>原核:RNA pol通过σ因子解读DNA序列;真核:不能解读DNA;</li>
+</ul>
+</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1020221010083937.png" alt=""><ul>
+<li>不同RNA聚合酶功能;</li>
+</ul>
+</li>
+<li>mRNA是三种主要RNA中丰度最低的一个,约占2-5%;</li>
+<li>RNA聚合酶I:<ul>
+<li>含有一个双向启动子, 且除核心启动子外,还有一个UPE;</li>
+<li>SL1复合体: 与核心启动子结合,含两TBP;</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points-9"><a href="#Inexplicable-points-9" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4><h3 id="Gene-expression-regulation"><a href="#Gene-expression-regulation" class="headerlink" title="Gene expression regulation:"></a>Gene expression regulation:</h3><h4 id="Terminology-10"><a href="#Terminology-10" class="headerlink" title="Terminology:"></a>Terminology:</h4><ul>
+<li>顺式作用:顺式作用的概念适用于只以DNA形式起作用的DNA序列，只影响与其直接相连的DNA序列。<ul>
+<li>反式作用:基因是编码可扩散产物的DNA序列，这种产物可以是蛋白质，也可以是RNA。任何基因产物自由扩散至其作用靶标的过程称为反式作用</li>
+</ul>
+</li>
+<li>negative control:通过阻遏物来抑制基因表达;<ul>
+<li>operator:操纵基因, 阻遏物的结合位点;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017085605.png" alt=""></li>
+</ul>
+</li>
+<li>positive control:通过正调节物来开启基因表达;<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017085801.png" alt=""></li>
+</ul>
+</li>
+<li>induction:在特殊的代谢物或化合物的作用下,由关闭变为工作状态;</li>
+<li>repression:特殊代谢或者化合物的积累作用下,由工作转变为关闭状态;<ul>
+<li>阻遏不是完全关闭转录,而是将其降低至1/5 or 1/100;</li>
+</ul>
+</li>
+<li>corepressor:如果某种物质能够阻止细菌产生合成这种物质的酶， 这种物质就是辅阻遏物; </li>
+<li>constitutive expression:表达速率保持恒定的基因表达;<ul>
+<li>constitutive mutation:生成可持续表达的基因,也即组成型表达;</li>
+</ul>
+</li>
+<li>interalletic complementation: 等位基因间互补,阻遏物往往能形成多聚物,从而阻遏物亚基能够随机结合,不论是哪个基因</li>
+<li>分解代谢物阻遏(catabolite repression):大肠杆菌lac操纵子是负可诱导的。<ul>
+<li>乳糖的存在可以除去lac阻遏物，这样转录就开启了。</li>
+<li>然而，这一操纵子也受到第二层控制，即细菌如果存在足够的葡萄糖供给，那么乳糖也不能开启这一系统。</li>
+<li>这一现象的基础是：葡萄糖是一种比乳糖更好的能量来源，所以如果可以获得葡萄糖，那么就没有必要开启lac操纵子。</li>
+</ul>
+</li>
+<li>autoregulated: 自体调节;<ul>
+<li>trpR调节基因受其自身产物tp阻遏物的阻遏。这种阻遏物的作用可降低其合成;</li>
+</ul>
+</li>
+</ul>
+<h4 id="Key-concepts-8"><a href="#Key-concepts-8" class="headerlink" title="Key concepts:"></a>Key concepts:</h4><ul>
+<li>负控制与正控制、可诱导控制与可阻遏控制可以分别组合在一起，形成不同类型的可能调节回路<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017090101.png" alt=""></li>
+<li>负控制+诱导(正控+阻遏):诱导实际上暗示了基因的状态为关闭,负控制说明这一关闭是由于激活的阻遏物引起的,而非失活的激活物引起的;</li>
+<li>负控+阻遏(正控+诱导):负控和阻遏是一致作用,而负控需要阻遏也即是说原来的阻遏物失活,需要辅阻遏物;</li>
+<li>元件:<ul>
+<li>负控制元件:阻遏物;</li>
+<li>诱导元件:诱导物;</li>
+<li>正控制元件:激活物;</li>
+<li>阻遏元件:辅阻遏物;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>原核生物以负调控为主，真核生物以正调控为主。</li>
+<li><em>lac</em>操纵子:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1720221017091849.png" alt=""></li>
+<li>由三个基因lacZ、lacY和lacA组成;</li>
+<li>lacZ:编码β-半乳糖苷酶,催化β-半乳糖苷分解单糖;</li>
+<li>lacY:编码β-半乳糖苷通透酶,转运β-半乳糖苷入细胞</li>
+<li>lacA:编码β-半乳糖转乙酰基酶,将乙酰从乙酰辅酶A(Acetyl-CoA)转移到β-半乳糖苷上;(可能是用于排出有害的β-<strong>半乳糖苷类似物</strong>)</li>
+<li>lacI:编码可扩散产物,阻遏物(蛋白质);<ul>
+<li>其启动子与RNA聚合酶结合效率低,同时由于缺少5’-UTR,起始翻译的能力较低,导致该阻遏物的丰度较低;</li>
+</ul>
+</li>
+<li>操纵基因:阻遏物可以与之结合阻止转录,含有反向重复序列(转座子?);<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1920221019103416.png" alt=""></li>
+<li>阻遏物-操纵基因结合的另个关键元件一铰链螺旋插入到操纵基因DNA的小沟中，这使DNA弯折45°。这种弯曲使大沟可定向用于HTH结合。</li>
+</ul>
+</li>
+<li>诱导物和辅阻遏物:往往与底物或产物结构高度相似;<ul>
+<li>对于lac系统来说一个经典的诱导剂就是IPTG,能诱导酶的合成但是不被酶解的分子,也称为安慰诱导物(gratuitous inducer)</li>
+<li>lac阻遏物:<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018143459.png" alt=""></li>
+<li>诱导物与阻遏物结合,阻遏物形变,失去功能:<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018143546.png" alt=""><ul>
+<li>IPTG改变lacI编码的阻遏物的空间结构,破坏了铰链螺旋,从而使得阻遏物与DNA结合亲和力下降;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>操纵子的排列:越重要的酶排列越靠前;<ul>
+<li>三种酶的相对数量保持相对恒定;</li>
+</ul>
+</li>
+<li>操纵子存在一个基础表达,以相当低的速度转录,从而保证体内存在通透酶,能够将诱导物吸收进体内;</li>
+</ul>
+</li>
+<li>操纵基因的鉴定:<ul>
+<li>组成型表达的根源实质上是缺少表达的抑制,从而一直表达;</li>
+<li>故而组成型表达可分为两类:反式作用(调节基因突变),顺式作用(操纵基因,启动子突变)</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018151659.png" alt=""><ul>
+<li>顺式显性作用:假设操纵基因突变,另外有别的启动子无法替代;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>调节基因:<ul>
+<li>反式隐性:$lacI^-$突变,无法结合操纵基因,但只要有别的lac基因能正常表达,即可正常调控操纵子;<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018152847.png" alt=""></li>
+<li>反式显性:$lacI^{-d}$突变,DNA结合区域受损;<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018153014.png" alt=""></li>
+<li>反式显性:$lac^{-s}$突变使得阻遏物无法结合或者应答诱导物,产生不可诱导型突变体;</li>
+</ul>
+</li>
+<li>阻遏物:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1920221019101310.png" alt=""><ul>
+<li>末端的螺旋-转角-螺旋是常见的<strong>DNA结合基序</strong>,</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1920221019102342.png" alt=""></li>
+</ul>
+</li>
+<li>所有阻遏物都结合于DNA!<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1920221019104309.png" alt=""><ul>
+<li>阻遏物可以结合非特异性位点,即低亲和力位点,所有碱基对都可以是低亲和力位点;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>lac的分解代谢物<strong>阻遏</strong>系统:<ul>
+<li>CRP:部分启动子转录需要辅助蛋白的参与,即依赖性启动子所必需的,又CRP需要结合cAMP才有活性,形成正控诱导体系;</li>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/2420221024083153.png" alt=""></li>
+<li>又高水平葡萄糖可以阻遏腺苷酸环化酶活性,减少cAMP,使得转录无法激活;</li>
+<li>CRP结构:相同亚基形成的二聚体,被单个cAMP激活,从弱结合变为强结合,<strong>且识别特异序列</strong>,两个反向五联体序列(两个亚基中心对称);</li>
+<li>CRP能够使得DNA在中心对称处将DNA弯曲90°以上,可能对转录直接作用,也可能只是便于RNA聚合酶结合;</li>
+</ul>
+</li>
+<li>trp操纵子自身处于负可阻遏控制。这意味着trpR基因产物—阻遏物是以失活负调节物形式制备出来；而阻遏是指rp操纵子产物色氨酸是p阻遏物的辅调节物。</li>
+</ul>
+<h4 id="inexplicable-points"><a href="#inexplicable-points" class="headerlink" title="inexplicable points:"></a>inexplicable points:</h4><ul>
+<li>阻遏物加速诱导?<ul>
+<li>阻遏物与DNA的结合实际上能增强RNA聚合酶结合DNA的能力，只是结合的RNA聚合酶不能起始转录。</li>
+<li>阻遏物实际上将RNA聚合酶储存于启动子上。加入诱导物后，阻遏物释放，RNA聚合酶能马上起始转录。</li>
+</ul>
+</li>
+</ul>
+<h3 id="真核生物的转录调节"><a href="#真核生物的转录调节" class="headerlink" title="真核生物的转录调节:"></a>真核生物的转录调节:</h3><h4 id="Terminology-11"><a href="#Terminology-11" class="headerlink" title="Terminology"></a>Terminology</h4><h4 id="Key-concept"><a href="#Key-concept" class="headerlink" title="Key concept"></a>Key concept</h4><ul>
+<li>真核生物中基因表达大多是在转录起始时受开放染色质控制的。<ul>
+<li>许多基因拥有多个启动子，而对启动子的选择可改变调节模式，能影响mRNA的利用，因为会改变5’-UTR;</li>
+</ul>
+</li>
+<li>基因表达控制可分为五个节点:<ul>
+<li><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/2620221026103059.png" alt=""><ul>
+<li>转录起始控制</li>
+<li>RNA修饰和加工</li>
+<li>转运控制</li>
+<li>翻译过程</li>
+<li>降解调节</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基因存在着两种结构状态。<ul>
+<li>第一种是闭合染色质中的非活性基因；</li>
+<li>第二种是只有在基因表达或潜在表达的细胞里，此时基因处于“活性”状态，或位于开放染色质中。其结构的改变发生在转录开始之前，这表明基因可以被转录的;</li>
+</ul>
+</li>
+<li>在单倍体配子中,染色体以高度凝聚,经修饰的染色质状态存在;</li>
+<li>基因的启动:<ul>
+<li>一些转录因子可能在复制叉之后与组蛋白竞争结合DNA。<ul>
+<li>封闭染色质可能通过暂时性置换组蛋白八聚体从而打开染色质结构</li>
+<li>如果有机体含有足够高浓度的转录因子，那么染色质可被打开；</li>
+<li>而如果转录因子浓度较低，那么随后核小体就会结合和凝聚这一区域。</li>
+</ul>
+</li>
+<li>一些转录因子可识别“封闭”染色质中的靶标以起始转录。<ul>
+<li>这些转录因子能募集组蛋白修饰蛋白和染色质重塑子;</li>
+<li>可以开启基因区段,或者是移除启动子结合的障碍物;</li>
+</ul>
+</li>
+<li>基因组被边界元件（绝缘子）分成多个结构域。</li>
+<li>绝缘子可阻断染色质修饰从一个结构域向另一个结构域扩散。</li>
+</ul>
+</li>
+<li>真核生物的正控制:<ul>
+<li>真激活物(true activator): 转录因子, 与启动子上基础转录装置发生直接接触发挥功能; 该激活物的调控模式如下:<br>a. 组织特异性转录因子只在特定细胞类型中合成; 调节发育的因子, 同源异形蛋白(homeoprotein或homeodomainprotein);<br>b. 转录因子活性可由修饰直接控制(如磷酸化激活);<br>c. 转录因子可通过配体的结合被激活或失活<br><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/11/0920221109100843.png" alt=""><br>d. 转录因子的有效性可能存在差异<br>e. 二聚体转录因子可存在不同的配偶体。一种配偶体可使之失活，而活性配偶体的合成可取代失活形式;尤其在螺旋-环-螺旋(helix-loop-helix,HLH)蛋白中<br>f. 转录因子可从非活性前体中被切割出来<br><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/11/0920221109101004.png" alt=""></li>
+<li>抗阻遏物(antirepressor):在这些激活物中，当其中一种结合于增强子时，它会募集组蛋白修饰酶和（或）染色质重塑复合体，将染色质从封闭状态转变成开放状态。<br><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/11/0920221109104202.png" alt=""><br>a. 阻遏物将激活物隔离于细胞质中<br>b. 阻遏物结合与激活物从而使其活性失效<br>c. 或者阻遏物被掩盖且固定于细胞质, 直到被释放后进入细胞核, 结合激活物<br>d. 阻遏物与激活物竞争结合位点;</li>
+<li>构筑蛋白(architectural protein,如阴阳（Yin-Yang)蛋白。这些蛋白质的作用是使DNA弯曲，将结合的蛋白质聚集在一起，并形成协同复合体；或使DNA往相反方向弯曲而阻止复合体的形成;<img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/11/0920221109104244.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h4 id="Inexplicable-points-10"><a href="#Inexplicable-points-10" class="headerlink" title="Inexplicable points"></a>Inexplicable points</h4></article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/biology/">biology</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/05/hexo-blog%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">hexo-blog环境配置</div></div></a></div><div class="next-post pull-right"><a href="/2021/12/17/Bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Bash学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/14/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="基因工程学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-14</div><div class="title">基因工程学习笔记</div></div></a></div><div><a href="/2023/06/10/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%84%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="蛋白质组学学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-10</div><div class="title">蛋白质组学学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018081403.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Molaison</div><div class="author-info__description">Per Aspera Ad Astra.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="https://github.com/Molaison"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Molaison" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sub2pro@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/people/wang-er-zhi-88" target="_blank" title="知乎"><i class="fab fa-zhihu"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-First-Section-Gene-is-DNA-that-encodes-RNA-and-polypeptides"><span class="toc-number">1.</span> <span class="toc-text">The First Section: Gene is DNA that encodes RNA and polypeptides</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology"><span class="toc-number">1.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts"><span class="toc-number">1.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points"><span class="toc-number">1.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interrupted-gene"><span class="toc-number">2.</span> <span class="toc-text">Interrupted gene</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-1"><span class="toc-number">2.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-1"><span class="toc-number">2.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-1"><span class="toc-number">2.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview-of-Genome"><span class="toc-number">3.</span> <span class="toc-text">Overview of Genome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-2"><span class="toc-number">3.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-Concepts"><span class="toc-number">3.2.</span> <span class="toc-text">Key Concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-2"><span class="toc-number">3.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Genome-sequence-and-evolution"><span class="toc-number">4.</span> <span class="toc-text">Genome sequence and evolution</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-3"><span class="toc-number">4.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-2"><span class="toc-number">4.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-3"><span class="toc-number">4.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E7%B0%87%E4%B8%8E%E9%87%8D%E5%A4%8D-%E7%9C%8B%E4%B8%8D%E6%87%82%EF%BC%8C%E5%85%88%E8%B7%B3%E8%BF%87"><span class="toc-number">5.</span> <span class="toc-text">成簇与重复(看不懂，先跳过)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-4"><span class="toc-number">5.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-points"><span class="toc-number">5.2.</span> <span class="toc-text">Key points</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-4"><span class="toc-number">5.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chromosome"><span class="toc-number">6.</span> <span class="toc-text">Chromosome</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-5"><span class="toc-number">6.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-3"><span class="toc-number">6.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-5"><span class="toc-number">6.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-DNA-replication-related-to-Cell-circle"><span class="toc-number">7.</span> <span class="toc-text">The DNA replication related to Cell circle</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-6"><span class="toc-number">7.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-4"><span class="toc-number">7.2.</span> <span class="toc-text">Key concepts:**</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-6"><span class="toc-number">7.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Transpooson-and-Retrovirus"><span class="toc-number">8.</span> <span class="toc-text">The Transpooson and Retrovirus</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-7"><span class="toc-number">8.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-5"><span class="toc-number">8.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-7"><span class="toc-number">8.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prokaryote-transcription"><span class="toc-number">9.</span> <span class="toc-text">Prokaryote transcription</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-8"><span class="toc-number">9.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-6"><span class="toc-number">9.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-8"><span class="toc-number">9.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Karyote-transcription"><span class="toc-number">10.</span> <span class="toc-text">Karyote transcription</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-9"><span class="toc-number">10.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-7"><span class="toc-number">10.2.</span> <span class="toc-text">Key concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-9"><span class="toc-number">10.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gene-expression-regulation"><span class="toc-number">11.</span> <span class="toc-text">Gene expression regulation:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-10"><span class="toc-number">11.1.</span> <span class="toc-text">Terminology:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concepts-8"><span class="toc-number">11.2.</span> <span class="toc-text">Key concepts:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#inexplicable-points"><span class="toc-number">11.3.</span> <span class="toc-text">inexplicable points:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E6%A0%B8%E7%94%9F%E7%89%A9%E7%9A%84%E8%BD%AC%E5%BD%95%E8%B0%83%E8%8A%82"><span class="toc-number">12.</span> <span class="toc-text">真核生物的转录调节:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Terminology-11"><span class="toc-number">12.1.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Key-concept"><span class="toc-number">12.2.</span> <span class="toc-text">Key concept</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Inexplicable-points-10"><span class="toc-number">12.3.</span> <span class="toc-text">Inexplicable points</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/10/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%84%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="蛋白质组学学习笔记">蛋白质组学学习笔记</a><time datetime="2023-06-10T05:53:57.000Z" title="发表于 2023-06-10 13:53:57">2023-06-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/10/Linux-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86-Regex-is-all-you-need/" title="Linux 文本处理: Regex is all you need!">Linux 文本处理: Regex is all you need!</a><time datetime="2023-06-10T00:41:40.000Z" title="发表于 2023-06-10 08:41:40">2023-06-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/09/Linux-etc-%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3/" title="Linux /etc/ 目录详解">Linux /etc/ 目录详解</a><time datetime="2023-06-09T10:13:10.000Z" title="发表于 2023-06-09 18:13:10">2023-06-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/27/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0/" title="机器学习杂记">机器学习杂记</a><time datetime="2022-11-27T07:45:26.000Z" title="发表于 2022-11-27 15:45:26">2022-11-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/14/%E5%9F%BA%E5%9B%A0%E5%B7%A5%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="基因工程学习笔记">基因工程学习笔记</a><time datetime="2022-10-14T02:05:40.000Z" title="发表于 2022-10-14 10:05:40">2022-10-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Molaison</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script type="text/javascript" src="/js/anchor_sign.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
