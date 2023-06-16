@@ -1,0 +1,920 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JavaScript逆向Basics: 加密与安全 | Molaison's blogs</title><meta name="keywords" content="computer science"><meta name="author" content="Molaison"><meta name="copyright" content="Molaison"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="当我们学习使用爬虫时，我们发现大多数网站的动态数据都采用了加密的方式。通过源代码中进行调试，我们可以“扣”出执行加密的JavaScript代码，再在python中调用JavaScript即可完成加密。尽管如此，了解加密算法，仍能够让我们迅速地反应过来加密函数所用编码，从而能让我们对JavaScript用Python进行改写，或是应对源代码中的僵尸代码。 本文包含的算法有编码算法，哈希算法，对称加密">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript逆向Basics: 加密与安全">
+<meta property="og:url" content="https://github.com/Molaison/Molaison.github.io/2023/06/16/JavaScript%E9%80%86%E5%90%91Basics-%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="Molaison&#39;s blogs">
+<meta property="og:description" content="当我们学习使用爬虫时，我们发现大多数网站的动态数据都采用了加密的方式。通过源代码中进行调试，我们可以“扣”出执行加密的JavaScript代码，再在python中调用JavaScript即可完成加密。尽管如此，了解加密算法，仍能够让我们迅速地反应过来加密函数所用编码，从而能让我们对JavaScript用Python进行改写，或是应对源代码中的僵尸代码。 本文包含的算法有编码算法，哈希算法，对称加密">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2023-06-16T00:18:31.000Z">
+<meta property="article:modified_time" content="2023-06-16T03:37:42.533Z">
+<meta property="article:author" content="Molaison">
+<meta property="article:tag" content="computer science">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018082037.png"><link rel="canonical" href="https://github.com/Molaison/Molaison.github.io/2023/06/16/JavaScript%E9%80%86%E5%90%91Basics-%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaScript逆向Basics: 加密与安全',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-16 11:37:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018081403.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Molaison's blogs</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">JavaScript逆向Basics: 加密与安全</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-16T00:18:31.000Z" title="发表于 2023-06-16 08:18:31">2023-06-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-16T03:37:42.533Z" title="更新于 2023-06-16 11:37:42">2023-06-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/basic-knowledge/">basic knowledge</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">33k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>NaN:aN分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JavaScript逆向Basics: 加密与安全"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p>当我们学习使用爬虫时，我们发现大多数网站的动态数据都采用了加密的方式。通过源代码中进行调试，我们可以“扣”出执行加密的JavaScript代码，再在python中调用JavaScript即可完成加密。尽管如此，了解加密算法，仍能够让我们迅速地反应过来加密函数所用编码，从而能让我们对JavaScript用Python进行改写，或是应对源代码中的僵尸代码。</p>
+<p>本文包含的算法有编码算法，哈希算法，对称加密算法，口令加密算法，密钥交换算法，非对称加密算法，签名算法，数字证书。我会首先介绍基础知识，如用途，使用什么JavaScript函数完成等等。紧接着再介绍该算法的流程。话不多说，我们开始吧！</p>
+<h3 id="编码算法"><a href="#编码算法" class="headerlink" title="编码算法"></a>编码算法</h3><p>编码算法事实上并不是一种加密算法，他仅仅是将数据使用某种编码进行表示，因而我们首先要了解什么是编码。</p>
+<p>我们最常见的编码是ASCII编码，如下表。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>ASCII值</th>
+<th>控制字符</th>
+<th>ASCII值</th>
+<th>控制字符</th>
+<th>ASCII值</th>
+<th>控制字符</th>
+<th>ASCII值</th>
+<th>控制字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>NUT</td>
+<td>32</td>
+<td>(space)</td>
+<td>64</td>
+<td>@</td>
+<td>96</td>
+<td>、</td>
+</tr>
+<tr>
+<td>1</td>
+<td>SOH</td>
+<td>33</td>
+<td>!</td>
+<td>65</td>
+<td>A</td>
+<td>97</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2</td>
+<td>STX</td>
+<td>34</td>
+<td>“</td>
+<td>66</td>
+<td>B</td>
+<td>98</td>
+<td>b</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ETX</td>
+<td>35</td>
+<td>#</td>
+<td>67</td>
+<td>C</td>
+<td>99</td>
+<td>c</td>
+</tr>
+<tr>
+<td>4</td>
+<td>EOT</td>
+<td>36</td>
+<td>$</td>
+<td>68</td>
+<td>D</td>
+<td>100</td>
+<td>d</td>
+</tr>
+<tr>
+<td>5</td>
+<td>ENQ</td>
+<td>37</td>
+<td>%</td>
+<td>69</td>
+<td>E</td>
+<td>101</td>
+<td>e</td>
+</tr>
+<tr>
+<td>6</td>
+<td>ACK</td>
+<td>38</td>
+<td>&amp;</td>
+<td>70</td>
+<td>F</td>
+<td>102</td>
+<td>f</td>
+</tr>
+<tr>
+<td>7</td>
+<td>BEL</td>
+<td>39</td>
+<td>,</td>
+<td>71</td>
+<td>G</td>
+<td>103</td>
+<td>g</td>
+</tr>
+<tr>
+<td>8</td>
+<td>BS</td>
+<td>40</td>
+<td>(</td>
+<td>72</td>
+<td>H</td>
+<td>104</td>
+<td>h</td>
+</tr>
+<tr>
+<td>9</td>
+<td>HT</td>
+<td>41</td>
+<td>)</td>
+<td>73</td>
+<td>I</td>
+<td>105</td>
+<td>i</td>
+</tr>
+<tr>
+<td>10</td>
+<td>LF</td>
+<td>42</td>
+<td>*</td>
+<td>74</td>
+<td>J</td>
+<td>106</td>
+<td>j</td>
+</tr>
+<tr>
+<td>11</td>
+<td>VT</td>
+<td>43</td>
+<td>+</td>
+<td>75</td>
+<td>K</td>
+<td>107</td>
+<td>k</td>
+</tr>
+<tr>
+<td>12</td>
+<td>FF</td>
+<td>44</td>
+<td>,</td>
+<td>76</td>
+<td>L</td>
+<td>108</td>
+<td>l</td>
+</tr>
+<tr>
+<td>13</td>
+<td>CR</td>
+<td>45</td>
+<td>-</td>
+<td>77</td>
+<td>M</td>
+<td>109</td>
+<td>m</td>
+</tr>
+<tr>
+<td>14</td>
+<td>SO</td>
+<td>46</td>
+<td>.</td>
+<td>78</td>
+<td>N</td>
+<td>110</td>
+<td>n</td>
+</tr>
+<tr>
+<td>15</td>
+<td>SI</td>
+<td>47</td>
+<td>/</td>
+<td>79</td>
+<td>O</td>
+<td>111</td>
+<td>o</td>
+</tr>
+<tr>
+<td>16</td>
+<td>DLE</td>
+<td>48</td>
+<td>0</td>
+<td>80</td>
+<td>P</td>
+<td>112</td>
+<td>p</td>
+</tr>
+<tr>
+<td>17</td>
+<td>DCI</td>
+<td>49</td>
+<td>1</td>
+<td>81</td>
+<td>Q</td>
+<td>113</td>
+<td>q</td>
+</tr>
+<tr>
+<td>18</td>
+<td>DC2</td>
+<td>50</td>
+<td>2</td>
+<td>82</td>
+<td>R</td>
+<td>114</td>
+<td>r</td>
+</tr>
+<tr>
+<td>19</td>
+<td>DC3</td>
+<td>51</td>
+<td>3</td>
+<td>83</td>
+<td>S</td>
+<td>115</td>
+<td>s</td>
+</tr>
+<tr>
+<td>20</td>
+<td>DC4</td>
+<td>52</td>
+<td>4</td>
+<td>84</td>
+<td>T</td>
+<td>116</td>
+<td>t</td>
+</tr>
+<tr>
+<td>21</td>
+<td>NAK</td>
+<td>53</td>
+<td>5</td>
+<td>85</td>
+<td>U</td>
+<td>117</td>
+<td>u</td>
+</tr>
+<tr>
+<td>22</td>
+<td>SYN</td>
+<td>54</td>
+<td>6</td>
+<td>86</td>
+<td>V</td>
+<td>118</td>
+<td>v</td>
+</tr>
+<tr>
+<td>23</td>
+<td>TB</td>
+<td>55</td>
+<td>7</td>
+<td>87</td>
+<td>W</td>
+<td>119</td>
+<td>w</td>
+</tr>
+<tr>
+<td>24</td>
+<td>CAN</td>
+<td>56</td>
+<td>8</td>
+<td>88</td>
+<td>X</td>
+<td>120</td>
+<td>x</td>
+</tr>
+<tr>
+<td>25</td>
+<td>EM</td>
+<td>57</td>
+<td>9</td>
+<td>89</td>
+<td>Y</td>
+<td>121</td>
+<td>y</td>
+</tr>
+<tr>
+<td>26</td>
+<td>SUB</td>
+<td>58</td>
+<td>:</td>
+<td>90</td>
+<td>Z</td>
+<td>122</td>
+<td>z</td>
+</tr>
+<tr>
+<td>27</td>
+<td>ESC</td>
+<td>59</td>
+<td>;</td>
+<td>91</td>
+<td>[</td>
+<td>123</td>
+<td>{</td>
+</tr>
+<tr>
+<td>28</td>
+<td>FS</td>
+<td>60</td>
+<td>&lt;</td>
+<td>92</td>
+<td>\</td>
+<td>124</td>
+<td>\</td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td>GS</td>
+<td>61</td>
+<td>=</td>
+<td>93</td>
+<td>]</td>
+<td>125</td>
+<td>}</td>
+</tr>
+<tr>
+<td>30</td>
+<td>RS</td>
+<td>62</td>
+<td>&gt;</td>
+<td>94</td>
+<td>^</td>
+<td>126</td>
+<td>`</td>
+</tr>
+<tr>
+<td>31</td>
+<td>US</td>
+<td>63</td>
+<td>?</td>
+<td>95</td>
+<td>_</td>
+<td>127</td>
+<td>DEL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>上表中，ASCII值为十进制，但我们通常用16进制表示编码，故字母<code>A</code>的编码是十六进制的<code>0x41</code>，字母<code>B</code>是<code>0x42</code>，以此类推;</p>
+<p>ASCII对常见的字符进行编码，但其仅仅只有128个字符，想要表示更多就需要使用<code>Unicode</code>编码。</p>
+<p>Unicode编码是一种字符编码方案，用于表示世界上几乎所有字符的标准化编码。它为每个字符分配了一个唯一的数值，称为码点（Code Point），并以十六进制表示。最常见的表示方式是使用前缀”\u”加上四个十六进制数字来表示一个字符的 Unicode 码点。例如，字符 “A” 的 Unicode 码点是 U+0041，可以表示为 “\u0041”。</p>
+<p>Unicode 编码有不同的编码方式，其中最常见的是 UTF-8 和 UTF-16。UTF-8 是一种变长编码，使用 1 到 4 个字节来表示不同的字符。在 UTF-8 编码中，常见的 ASCII 字符使用一个字节表示，而非 ASCII 字符使用多个字节表示。UTF-16 是一种定长编码，使用 2 个字节或 4 个字节来表示不同的字符。大部分常见字符使用两个字节表示，而一些较罕见的字符使用四个字节表示。</p>
+<p>Python 中的 ASCII 和 Unicode 处理：</p>
+<ol>
+<li><p>ASCII 编码：</p>
+<ul>
+<li>使用 <code>ord()</code> 函数将字符转换为对应的 ASCII 码值。</li>
+<li>使用 <code>chr()</code> 函数将 ASCII 码值转换为对应的字符。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">char = <span class="string">&#x27;A&#x27;</span></span><br><span class="line">ascii_value = <span class="built_in">ord</span>(char)</span><br><span class="line"><span class="built_in">print</span>(ascii_value)  <span class="comment"># 输出：65</span></span><br><span class="line"></span><br><span class="line">char = <span class="built_in">chr</span>(<span class="number">65</span>)</span><br><span class="line"><span class="built_in">print</span>(char)  <span class="comment"># 输出：A</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Unicode 编码：</p>
+<ul>
+<li>使用 <code>encode()</code> 方法将字符串编码为指定的 Unicode 编码格式。</li>
+<li>使用 <code>decode()</code> 方法将 Unicode 编码转换为字符串。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string = <span class="string">&#x27;你好&#x27;</span></span><br><span class="line">unicode_string = string.encode(<span class="string">&#x27;unicode_escape&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(unicode_string)  <span class="comment"># 输出：b&#x27;\\u4f60\\u597d&#x27;</span></span><br><span class="line"></span><br><span class="line">decoded_string = unicode_string.decode(<span class="string">&#x27;unicode_escape&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(decoded_string)  <span class="comment"># 输出：你好</span></span><br></pre></td></tr></table></figure>
+<p>JavaScript 中的 ASCII 和 Unicode 处理：</p>
+<ol>
+<li><p>ASCII 编码：</p>
+<ul>
+<li>使用 <code>charCodeAt()</code> 方法获取字符串中指定位置字符的 ASCII 码值。</li>
+<li>使用 <code>String.fromCharCode()</code> 方法将 ASCII 码值转换为对应的字符。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> char = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> asciiValue = char.<span class="title function_">charCodeAt</span>(<span class="number">0</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(asciiValue);  <span class="comment">// 输出：65</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> char = <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(<span class="number">65</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(char);  <span class="comment">// 输出：A</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Unicode 编码：</p>
+<ul>
+<li>使用 <code>\u</code> 前缀将 Unicode 字符码直接插入字符串中。</li>
+<li>使用 <code>String.fromCharCode()</code> 方法将 Unicode 字符码转换为对应的字符。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">&#x27;\u4F60\u597D&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(string);  <span class="comment">// 输出：你好</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> char = <span class="title class_">String</span>.<span class="title function_">fromCharCode</span>(<span class="number">0x4F60</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(char);  <span class="comment">// 输出：你</span></span><br></pre></td></tr></table></figure>
+<p>另外一种常见但可能绝大多数人不明白的是URL编码，他通常出现在我们浏览器的URL栏中。譬如，当我使用Bing进行一次检索“必应”，URL会变成“<a target="_blank" rel="noopener" href="https://www.bing.com/search?q=%E5%BF%85%E5%BA%94&amp;mkt=zh-CN”，如果你对爬虫比较熟悉的话应该知道`?`后是字符串参数，使用`&amp;`进行分隔，&quot;q=%E5%BF%85%E5%BA%94&quot;即是我们这次检索的内容，`q=`之后的即为URL编码后的“必应”。">https://www.bing.com/search?q=%E5%BF%85%E5%BA%94&amp;mkt=zh-CN”，如果你对爬虫比较熟悉的话应该知道`?`后是字符串参数，使用`&amp;`进行分隔，&quot;q=%E5%BF%85%E5%BA%94&quot;即是我们这次检索的内容，`q=`之后的即为URL编码后的“必应”。</a></p>
+<p>URL的编码逻辑是：</p>
+<ul>
+<li>如果字符是<code>A</code>~<code>Z</code>，<code>a</code>~<code>z</code>，<code>0</code>~<code>9</code>以及<code>-</code>、<code>_</code>、<code>.</code>、<code>*</code>，则保持不变；</li>
+<li>如果是其他字符，先转换为UTF-8编码，然后对每个字节以<code>%XX</code>表示。<br>例如：字符<code>中</code>的UTF-8编码是<code>0xe4b8ad</code>，因此，它的URL编码是<code>%E4%B8%AD</code>。URL编码<strong>总是大写</strong>。也即“去0x，改大写，每字节加%”。<code>!</code>等特殊字符非<code>-</code>、<code>_</code>、<code>.</code>、<code>*</code>，虽然是ASCII字符，也要对其编码。</li>
+</ul>
+<p>在 Python 中，可以使用 <code>urllib.parse</code> 模块中的 <code>quote()</code> 和 <code>quote_plus()</code> 函数来进行 URL 编码，以及使用 <code>unquote()</code> 和 <code>unquote_plus()</code> 函数来进行 URL 解码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"></span><br><span class="line"><span class="comment"># URL 编码</span></span><br><span class="line">url = <span class="string">&#x27;https://www.example.com/?q=hello world&#x27;</span></span><br><span class="line">encoded_url = urllib.parse.quote(url)</span><br><span class="line"><span class="built_in">print</span>(encoded_url)  <span class="comment"># 输出：https%3A//www.example.com/%3Fq%3Dhello%20world</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL 解码</span></span><br><span class="line">decoded_url = urllib.parse.unquote(encoded_url)</span><br><span class="line"><span class="built_in">print</span>(decoded_url)  <span class="comment"># 输出：https://www.example.com/?q=hello world</span></span><br></pre></td></tr></table></figure></p>
+<p>在 JavaScript 中，可以使用 <code>encodeURIComponent()</code> 函数进行 URL 编码，以及使用 <code>decodeURIComponent()</code> 函数进行 URL 解码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// URL 编码</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">&#x27;https://www.example.com/?q=hello world&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> encodedUrl = <span class="built_in">encodeURIComponent</span>(url);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(encodedUrl);  <span class="comment">// 输出：https%3A%2F%2Fwww.example.com%2F%3Fq%3Dhello%20world</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// URL 解码</span></span><br><span class="line"><span class="keyword">var</span> decodedUrl = <span class="built_in">decodeURIComponent</span>(encodedUrl);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(decodedUrl);  <span class="comment">// 输出：https://www.example.com/?q=hello world</span></span><br></pre></td></tr></table></figure></p>
+<p>URL编码是对字符进行编码，表示成<code>%xx</code>的形式，而Base64编码是对二进制数据进行编码，表示成文本格式。它常用于在文本协议中传输或存储二进制数据，例如在电子邮件中传输附件或在网页中嵌入图像数据。</p>
+<p>Base64编码可以把任意长度的二进制数据变为纯文本，且只包含<code>A</code>~<code>Z</code>、<code>a</code>~<code>z</code>、<code>0</code>~<code>9</code>、<code>+</code>、<code>/</code>、<code>=</code>这些字符。它的原理是把3字节的二进制数据按6bit一组，用4个int整数表示，然后查表，把int整数用索引对应到字符，得到编码后的字符串。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>码值</th>
+<th>字符</th>
+<th>码值</th>
+<th>字符</th>
+<th>码值</th>
+<th>字符</th>
+<th>码值</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>A</td>
+<td>16</td>
+<td>Q</td>
+<td>32</td>
+<td>g</td>
+<td>48</td>
+<td>w</td>
+</tr>
+<tr>
+<td>1</td>
+<td>B</td>
+<td>17</td>
+<td>R</td>
+<td>33</td>
+<td>h</td>
+<td>49</td>
+<td>x</td>
+</tr>
+<tr>
+<td>2</td>
+<td>C</td>
+<td>18</td>
+<td>S</td>
+<td>34</td>
+<td>i</td>
+<td>50</td>
+<td>y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>D</td>
+<td>19</td>
+<td>T</td>
+<td>35</td>
+<td>j</td>
+<td>51</td>
+<td>z</td>
+</tr>
+<tr>
+<td>4</td>
+<td>E</td>
+<td>20</td>
+<td>U</td>
+<td>36</td>
+<td>k</td>
+<td>52</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>F</td>
+<td>21</td>
+<td>V</td>
+<td>37</td>
+<td>l</td>
+<td>53</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G</td>
+<td>22</td>
+<td>W</td>
+<td>38</td>
+<td>m</td>
+<td>54</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>H</td>
+<td>23</td>
+<td>X</td>
+<td>39</td>
+<td>n</td>
+<td>55</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>I</td>
+<td>24</td>
+<td>Y</td>
+<td>40</td>
+<td>o</td>
+<td>56</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>J</td>
+<td>25</td>
+<td>Z</td>
+<td>41</td>
+<td>p</td>
+<td>57</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>K</td>
+<td>26</td>
+<td>a</td>
+<td>42</td>
+<td>q</td>
+<td>58</td>
+<td>6</td>
+</tr>
+<tr>
+<td>11</td>
+<td>L</td>
+<td>27</td>
+<td>b</td>
+<td>43</td>
+<td>r</td>
+<td>59</td>
+<td>7</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M</td>
+<td>28</td>
+<td>c</td>
+<td>44</td>
+<td>s</td>
+<td>60</td>
+<td>8</td>
+</tr>
+<tr>
+<td>13</td>
+<td>N</td>
+<td>29</td>
+<td>d</td>
+<td>45</td>
+<td>t</td>
+<td>61</td>
+<td>9</td>
+</tr>
+<tr>
+<td>14</td>
+<td>O</td>
+<td>30</td>
+<td>e</td>
+<td>46</td>
+<td>u</td>
+<td>62</td>
+<td>+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>P</td>
+<td>31</td>
+<td>f</td>
+<td>47</td>
+<td>v</td>
+<td>63</td>
+<td>/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>需要注意的是，Base64 编码后的数据会比原始数据略长，因为每 3 个字节的数据会被编码为 4 个字符。Base64 编码的结果是由 A-Z、a-z、0-9、+ 和 / 组成的字符序列。有时，由于特定环境的限制（其实就是为了在URL中使用），会将字符 “+” 和 “/“ 分别替换为 “-“ 和 “_“。</p>
+<p>当输入的二进制数组字节长度不是3的整数倍时，需要对输入的末尾补一个或两个<code>0x00</code>，编码后，在结尾加一个<code>=</code>表示补充了1个<code>0x00</code>，加两个<code>=</code>表示补充了2个<code>0x00</code>，解码的时候，去掉末尾补充的一个或两个<code>0x00</code>即可。</p>
+<p>在 Python 中，可以使用 <code>base64</code> 模块来进行 Base64 编码和解码操作。该模块提供了 <code>b64encode()</code> 和 <code>b64decode()</code> 函数用于编码和解码操作。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line"><span class="comment"># Base64 编码</span></span><br><span class="line">data = <span class="string">b&#x27;Hello, World!&#x27;</span></span><br><span class="line">encoded_data = base64.b64encode(data)</span><br><span class="line"><span class="built_in">print</span>(encoded_data)  <span class="comment"># 输出：b&#x27;SGVsbG8sIFdvcmxkIQ==&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Base64 解码</span></span><br><span class="line">decoded_data = base64.b64decode(encoded_data)</span><br><span class="line"><span class="built_in">print</span>(decoded_data)  <span class="comment"># 输出：b&#x27;Hello, World!&#x27;</span></span><br></pre></td></tr></table></figure><br>在 JavaScript 中，可以使用 <code>btoa()</code> 函数进行 Base64 编码，以及使用 <code>atob()</code> 函数进行 Base64 解码。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Base64 编码</span></span><br><span class="line"><span class="keyword">var</span> data = <span class="string">&#x27;Hello, World!&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> encodedData = <span class="title function_">btoa</span>(data);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(encodedData);  <span class="comment">// 输出：SGVsbG8sIFdvcmxkIQ==</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Base64 解码</span></span><br><span class="line"><span class="keyword">var</span> decodedData = <span class="title function_">atob</span>(encodedData);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(decodedData);  <span class="comment">// 输出：Hello, World!</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="哈希算法"><a href="#哈希算法" class="headerlink" title="哈希算法"></a>哈希算法</h3><p>哈希算法（Hash Algorithm）是一种将任意长度的数据映射为固定长度哈希值（Hash Value）的算法。哈希值通常是一个较短的固定大小的字节数组，用于表示原始数据。</p>
+<p>哈希算法的主要特点是：</p>
+<ol>
+<li>固定输出长度：不论输入数据的大小，哈希算法都会生成一个固定长度的哈希值。常见的哈希长度有128位、256位或更长。</li>
+<li>独特性：对于不同的输入数据，哈希算法应该生成不同的哈希值。这意味着即使输入数据发生细微的改变，生成的哈希值也会有较大的差异。</li>
+<li>不可逆性：从哈希值无法还原出原始数据。即使对于稍微不同的输入，其哈希值也应该是完全不同的。</li>
+<li>高效性：计算哈希值的速度应该很快，即使对于大量的数据也应该在合理的时间内完成。</li>
+</ol>
+<p>哈希碰撞: 尽管哈希算法的目标是生成唯一的哈希值，但在实际应用中，由于<strong>输入数据的无限性</strong>和<strong>哈希值的有限性</strong>，哈希碰撞是可能发生的。哈希算法的输出空间是固定的，而输入空间则是无穷大的，因此存在多个不同的输入数据可能会映射到相同的哈希值上。</p>
+<p>对于一个安全的哈希算法而言， 他必须要 1）碰撞概率低；2）不能推测出输出。碰撞概率高增需要加长输出字节，而不能推测输出指的是输出不能看出任何规律。</p>
+<h4 id="常见的哈希算法"><a href="#常见的哈希算法" class="headerlink" title="常见的哈希算法"></a>常见的哈希算法</h4><h5 id="MD5算法"><a href="#MD5算法" class="headerlink" title="MD5算法"></a>MD5算法</h5><p>算法流程：</p>
+<ol>
+<li>填充数据：将输入数据进行填充，使其长度满足对512位（64字节）块的整数倍。填充方式是在数据末尾添加一个1比特，然后添加足够的零比特，以填充剩余的空间，并在最后添加一个64位的，表示原始数据长度的，值。即令其位长对512求余的结果等于448。</li>
+<li>划分为块：将填充后的数据划分为多个512位（64字节）的数据块。</li>
+<li>初始化变量：设置四个32位的初始变量A、B、C和D。这些变量作为中间计算结果的存储器。</li>
+<li>处理每个块：对于每个512位的数据块，进行以下操作：<ul>
+<li>将块分为16个32位的子块。</li>
+<li>初始化四个临时变量：a、b、c和d，其初始值与A、B、C和D相同。</li>
+<li>进行四轮循环，每轮循环包括16个操作步骤。在每个步骤中，根据一定的位操作、逻辑函数和非线性函数，更新临时变量的值。<ul>
+<li>四个非线性函数：<ul>
+<li>F( X ,Y ,Z ) = ( X &amp; Y ) | ( (~X) &amp; Z )</li>
+<li>G( X ,Y ,Z ) = ( X &amp; Z ) | ( Y &amp; (~Z) )</li>
+<li>H( X ,Y ,Z ) =X ^ Y ^ Z</li>
+<li>I( X ,Y ,Z ) =Y ^ ( X | (~Z) )</li>
+<li><code>&amp;</code>是与（And），<code>|</code>是或（Or），<code>~</code>是非（Not），<code>^</code>是异或（Xor））</li>
+</ul>
+</li>
+<li>更新临时变量（）：<ul>
+<li>FF(X ,Y ,Z ,V ,Mj ,s ,ti ) 操作为 X = Y + ( (X + F(Y,Z,V) + Mj + ti) &lt;&lt; s)</li>
+<li>GG(X ,Y ,Z ,V ,Mj ,s ,ti ) 操作为 X = Y + ( (X + G(Y,Z,V) + Mj + ti) &lt;&lt; s)</li>
+<li>HH(X ,Y ,Z ,V ,Mj ,s ,ti) 操作为 X = Y + ( (X + H(Y,Z,V) + Mj + ti) &lt;&lt; s)</li>
+<li>II(X ,Y ,Z ,V ,Mj ,s ,ti) 操作为 X = Y + ( (X + I(Y,Z,V) + Mj + ti) &lt;&lt; s)</li>
+<li><code>&lt;&lt;</code>表示循环左移位，将左侧溢出的值移到右边。</li>
+</ul>
+</li>
+<li>每一轮中分别使用FF，GG，HH，II函数。</li>
+<li>每次操作对a、b、c和d中的其中三个作一次<strong>非线性函数运算</strong>，然后将所得结果加上第四个<strong>变量</strong>，文本的一个<strong>子分组，即第i个子块Mj</strong>和一个<strong>常数ti</strong>。再将所得结果向左<strong>环移</strong>一个<strong>不定的数s</strong>，并加上a、b、c或d中之一。最后用该结果取代a、b、c或d中之一。<ul>
+<li>第一轮</li>
+<li>FF(a ,b ,c ,d ,M0 ,7 ,0xd76aa478 )</li>
+<li>FF(d ,a ,b ,c ,M1 ,12 ,0xe8c7b756 )</li>
+<li>FF(c ,d ,a ,b ,M2 ,17 ,0x242070db )</li>
+<li>FF(b ,c ,d ,a ,M3 ,22 ,0xc1bdceee )</li>
+<li>FF(a ,b ,c ,d ,M4 ,7 ,0xf57c0faf ) <strong>发现规律了吗？abcd循环！</strong></li>
+<li>此后三轮不同之处在于<code>函数</code>和<code>s</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>将最终的临时变量的值与初始变量的值相加，得到新的A、B、C和D的值。</li>
+</ul>
+</li>
+<li>输出结果：最后，将A、B、C和D的值按照小端序连接起来，形成一个128位（16字节）的哈希值。这就是MD5算法的输出结果。<blockquote>
+<p>小端序（Little-endian）是一种字节序排列方式，用于表示多字节数据在存储器中的顺序。在小端序中，较低有效字节（低位字节）存储在内存的较低地址，而较高有效字节（高位字节）存储在内存的较高地址。</p>
+</blockquote>
+</li>
+</ol>
+<p>Python中，hashlib库完成：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义要计算MD5哈希的数据</span></span><br><span class="line">data = <span class="string">&quot;Hello, World!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建MD5哈希对象</span></span><br><span class="line">md5_hash = hashlib.md5()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新哈希对象的数据</span></span><br><span class="line">md5_hash.update(data.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算哈希值</span></span><br><span class="line">hash_value = md5_hash.hexdigest()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印哈希值</span></span><br><span class="line"><span class="built_in">print</span>(hash_value)</span><br></pre></td></tr></table></figure></p>
+<p>JavaScript中:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> crypto = <span class="built_in">require</span>(<span class="string">&#x27;crypto&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义要计算MD5哈希的数据</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建MD5哈希对象</span></span><br><span class="line"><span class="keyword">const</span> md5Hash = crypto.<span class="title function_">createHash</span>(<span class="string">&#x27;md5&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 更新哈希对象的数据</span></span><br><span class="line">md5Hash.<span class="title function_">update</span>(data, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 计算哈希值</span></span><br><span class="line"><span class="keyword">const</span> hashValue = md5Hash.<span class="title function_">digest</span>(<span class="string">&#x27;hex&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 打印哈希值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hashValue);</span><br></pre></td></tr></table></figure></p>
+<h5 id="SHA-1算法"><a href="#SHA-1算法" class="headerlink" title="SHA-1算法"></a>SHA-1算法</h5><p>算法流程：</p>
+<ol>
+<li>初始化变量：SHA-1使用一组初始变量，称为哈希值（也称为中间哈希结果），共有5个32位的字，分别记为<code>h0</code>、<code>h1</code>、<code>h2</code>、<code>h3</code>和<code>h4</code>。</li>
+<li>填充数据：将输入数据进行填充，使其长度满足对512位（64字节）块的整数倍。填充方式是在数据末尾添加一个1比特，然后添加足够的零比特，以填充剩余的空间，并在最后添加一个64位的表示原始数据长度的值。</li>
+<li>划分为块：将填充后的数据划分为多个512位（64字节）的数据块。</li>
+<li>处理每个块：对于每个512位的数据块，进行以下操作：<ul>
+<li>将块分为16个32位的子块。</li>
+<li>初始化一个数组<code>w</code>，用于存储80个32位的字。</li>
+<li>通过扩展机制，从子块中生成额外的64个字，填充到数组<code>w</code>中。<pre><code>  1. 将16个子块（32位）复制到数组`w`的前16个位置。
+  2. 对于`i`从16到79的每个值，进行以下操作：
+      - 通过进行位操作（如循环左移、异或等），从`w[i-3]`、`w[i-8]`、`w[i-14]`和`w[i-16]`生成新的字`w[i]`。
+      - `W(t) = S^1(W(t-3) XOR W(t-8) XOR W(t-14) XOR W(t-16))`
+      - 这里的`t`表示当前的索引值（从0开始），`W(t)`表示在数组`w`中的第`t`个字，`XOR`表示按位异或操作，`S^1`表示循环左移1位。
+</code></pre></li>
+<li>进行80轮循环，每轮循环包括4个操作步骤，根据一定的位操作和非线性函数，更新<code>w</code>中的字。<ul>
+<li>每轮循环：<ul>
+<li>TEMP = S^5(A) + f(t;B,C,D) + E + W(t) + K(t);</li>
+<li>f(t;B,C,D)函数：<ul>
+<li>f(t;B,C,D) = (B AND C) OR ((NOT B) AND D)         ( 0 &lt;= t &lt;= 19)</li>
+<li>f(t;B,C,D) = B XOR C XOR D                        (20 &lt;= t &lt;= 39)</li>
+<li>f(t;B,C,D) = (B AND C) OR (B AND D) OR (C AND D)  (40 &lt;= t &lt;= 59)</li>
+<li>f(t;B,C,D) = B XOR C XOR D                        (60 &lt;= t &lt;= 79)</li>
+</ul>
+</li>
+<li>W(t)定义如上；</li>
+<li>K(t)函数：<ul>
+<li>K(t) = 0x5A827999         ( 0 &lt;= t &lt;= 19)</li>
+<li>K(t) = 0x6ED9EBA1         (20 &lt;= t &lt;= 39)</li>
+<li>K(t) = 0x8F1BBCDC         (40 &lt;= t &lt;= 59)</li>
+<li>K(t) = 0xCA62C1D6         (60 &lt;= t &lt;= 79)</li>
+</ul>
+</li>
+<li>E = D;</li>
+<li>D = C;</li>
+<li>C = S^30(B);</li>
+<li>B = A;</li>
+<li>A = TEMP;<ul>
+<li>根据<code>w</code>中的字和当前的哈希值，进行一系列的位操作和运算，更新哈希值。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出结果：最后，将最终的哈希值（<code>h0</code>、<code>h1</code>、<code>h2</code>、<code>h3</code>和<code>h4</code>）按照大端序（Big-endian）连接起来，形成一个160位（20字节）的哈希值。这就是SHA-1算法的输出结果。</li>
+</ol>
+<p>在python中：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calculate_sha1</span>(<span class="params">data</span>):</span><br><span class="line">    sha1_hash = hashlib.sha1()</span><br><span class="line">    sha1_hash.update(data.encode(<span class="string">&#x27;utf-8&#x27;</span>))  <span class="comment"># 将字符串编码为字节流并更新哈希对象</span></span><br><span class="line">    sha1_digest = sha1_hash.hexdigest()  <span class="comment"># 获取十六进制表示的哈希值</span></span><br><span class="line">    <span class="keyword">return</span> sha1_digest</span><br><span class="line"></span><br><span class="line">data = <span class="string">&#x27;Hello, World!&#x27;</span></span><br><span class="line">sha1 = calculate_sha1(data)</span><br><span class="line"><span class="built_in">print</span>(sha1)</span><br></pre></td></tr></table></figure><br>发现规律了吗？<code>hashlib</code>库在Python中提供了多种哈希算法的支持，除了SHA-1之外，以下是一些<code>hashlib</code>支持的其他常用哈希算法：</p>
+<ul>
+<li>SHA-224：SHA-224是SHA-2系列中的一种哈希算法，生成224位（28字节）的哈希值。</li>
+<li>SHA-256：SHA-256是SHA-2系列中的一种哈希算法，生成256位（32字节）的哈希值。</li>
+<li>SHA-384：SHA-384是SHA-2系列中的一种哈希算法，生成384位（48字节）的哈希值。</li>
+<li>SHA-512：SHA-512是SHA-2系列中的一种哈希算法，生成512位（64字节）的哈希值。</li>
+<li>SHA-3系列：<code>hashlib</code>库也支持SHA-3系列的哈希算法，如SHA3-224、SHA3-256、SHA3-384和SHA3-512等。</li>
+<li>MD5：MD5是一种广泛使用的哈希算法，生成128位（16字节）的哈希值。然而，MD5已经不再被推荐在安全敏感的场景中使用。</li>
+<li>BLAKE2系列：BLAKE2是一系列高性能哈希函数，包括BLAKE2b和BLAKE2s等变种。它们提供了不同的输出长度和速度/安全性权衡。<br>你可以使用<code>hashlib.new(algorithm)</code>方法来创建特定算法的哈希对象，其中<code>algorithm</code>参数指定算法名称（例如，”sha256”、”md5”等）。然后，使用<code>.update(data)</code>方法向哈希对象提供数据，并使用<code>.hexdigest()</code>方法获取十六进制表示的哈希值。</li>
+</ul>
+<p>在JavaScript中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> crypto = <span class="built_in">require</span>(<span class="string">&#x27;crypto&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">calculateSHA1</span>(<span class="params">data</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> sha1Hash = crypto.<span class="title function_">createHash</span>(<span class="string">&#x27;sha1&#x27;</span>);</span><br><span class="line">  sha1Hash.<span class="title function_">update</span>(data);</span><br><span class="line">  <span class="keyword">const</span> sha1Digest = sha1Hash.<span class="title function_">digest</span>(<span class="string">&#x27;hex&#x27;</span>);</span><br><span class="line">  <span class="keyword">return</span> sha1Digest;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = <span class="string">&#x27;Hello, World!&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> sha1 = <span class="title function_">calculateSHA1</span>(data);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(sha1);</span><br></pre></td></tr></table></figure><br>同样，也支持多种其他哈希算法</p>
+<ul>
+<li>SHA-256: <code>crypto.createHash(&#39;sha256&#39;)</code></li>
+<li>SHA-512: <code>crypto.createHash(&#39;sha512&#39;)</code></li>
+<li>MD5: <code>crypto.createHash(&#39;md5&#39;)</code></li>
+<li>SHA-3-256: <code>crypto.createHash(&#39;sha3-256&#39;)</code></li>
+<li>SHA-3-512: <code>crypto.createHash(&#39;sha3-512&#39;)</code></li>
+<li>RIPEMD-160: <code>crypto.createHash(&#39;ripemd160&#39;)</code></li>
+<li>Whirlpool: <code>crypto.createHash(&#39;whirlpool&#39;)</code></li>
+<li>Blake2b: <code>crypto.createHash(&#39;blake2b&#39;)</code></li>
+<li>Blake2s: <code>crypto.createHash(&#39;blake2s&#39;)</code></li>
+</ul>
+<p>你可以使用以上名称作为<code>crypto.createHash()</code>方法的参数来创建相应的哈希对象。然后，你可以使用<code>.update()</code>方法将数据添加到哈希对象中，并使用<code>.digest()</code>方法获取最终的哈希值。</p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>加盐（Salting）和迭代（Iteration）是在密码哈希过程中使用的两种技术，旨在增强密码的安全性。</p>
+<ol>
+<li>加盐（Salting）：加盐是在密码哈希过程中引入一个随机的盐值（salt），将其与密码进行组合，然后再进行哈希计算。盐值是一个随机字符串，每个用户的盐值都是唯一的。通过将盐值添加到密码中，即使相同的密码在哈希过程中生成了相同的哈希值，但由于不同用户使用不同的盐值，最终的哈希值也会不同。这种技术可以防止使用彩虹表等预先计算的攻击手段进行密码破解。</li>
+<li>迭代（Iteration）：迭代是在哈希计算过程中进行多次重复操作。通过多次迭代哈希算法，可以增加破解密码所需的计算成本。迭代的次数越多，破解者需要投入的计算资源就越多。迭代次数应该根据计算资源和应用的性能要求进行平衡。增加迭代次数可以有效抵御暴力破解和大规模计算资源的攻击。<br>加盐和迭代通常一起使用，以提高密码哈希的安全性。在存储密码时，应该为每个用户生成一个随机的盐值，并将其与用户的密码组合后进行哈希计算。然后，将盐值和哈希值一起存储在数据库中。当用户验证密码时，再次使用相同的盐值和迭代次数对输入的密码进行哈希计算，并与存储的哈希值进行比较，以验证密码的正确性。</li>
+</ol>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/computer-science/">computer science</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/06/15/Python%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0-Javascript%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Python爬虫笔记: Javascript逆向分析</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/12/17/Bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Bash学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-12-17</div><div class="title">Bash学习笔记</div></div></a></div><div><a href="/2021/10/05/Git%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Git命令学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-05</div><div class="title">Git命令学习笔记</div></div></a></div><div><a href="/2022/10/07/Javascript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Javascript学习笔记"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-07</div><div class="title">Javascript学习笔记</div></div></a></div><div><a href="/2023/06/09/Linux-etc-%E7%9B%AE%E5%BD%95%E8%AF%A6%E8%A7%A3/" title="Linux &#x2F;etc&#x2F; 目录详解"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-09</div><div class="title">Linux &#x2F;etc&#x2F; 目录详解</div></div></a></div><div><a href="/2023/06/10/Linux-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86-Regex-is-all-you-need/" title="Linux 文本处理: Regex is all you need!"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-10</div><div class="title">Linux 文本处理: Regex is all you need!</div></div></a></div><div><a href="/2023/06/15/Python%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0-Javascript%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" title="Python爬虫笔记: Javascript逆向分析"><img class="cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-15</div><div class="title">Python爬虫笔记: Javascript逆向分析</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gcore.jsdelivr.net/gh/Molaison/IMages/IMG/2022/10/1820221018081403.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Molaison</div><div class="author-info__description">Per Aspera Ad Astra.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" href="https://github.com/Molaison"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Molaison" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:sub2pro@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/people/wang-er-zhi-88" target="_blank" title="知乎"><i class="fab fa-zhihu"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">编码算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">哈希算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">常见的哈希算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#MD5%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.1.</span> <span class="toc-text">MD5算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SHA-1%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.2.</span> <span class="toc-text">SHA-1算法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-number">2.2.</span> <span class="toc-text">拓展</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/16/JavaScript%E9%80%86%E5%90%91Basics-%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AE%89%E5%85%A8/" title="JavaScript逆向Basics: 加密与安全">JavaScript逆向Basics: 加密与安全</a><time datetime="2023-06-16T00:18:31.000Z" title="发表于 2023-06-16 08:18:31">2023-06-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/Python%E7%88%AC%E8%99%AB%E7%AC%94%E8%AE%B0-Javascript%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/" title="Python爬虫笔记: Javascript逆向分析">Python爬虫笔记: Javascript逆向分析</a><time datetime="2023-06-15T09:25:52.000Z" title="发表于 2023-06-15 17:25:52">2023-06-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/14/%E5%86%8D%E8%AF%BBGeneXII-The-insight-of-biology/" title="再读GeneXII: The insight of biology">再读GeneXII: The insight of biology</a><time datetime="2023-06-14T09:27:46.000Z" title="发表于 2023-06-14 17:27:46">2023-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/10/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%BB%84%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="蛋白质组学学习笔记">蛋白质组学学习笔记</a><time datetime="2023-06-10T05:53:57.000Z" title="发表于 2023-06-10 13:53:57">2023-06-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/10/Linux-%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86-Regex-is-all-you-need/" title="Linux 文本处理: Regex is all you need!">Linux 文本处理: Regex is all you need!</a><time datetime="2023-06-10T00:41:40.000Z" title="发表于 2023-06-10 08:41:40">2023-06-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Molaison</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script type="text/javascript" src="/js/anchor_sign.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
